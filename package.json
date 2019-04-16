@@ -1,0 +1,16 @@
+{
+	"name": "marcdown",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/liyasthomas/marcdown.git"
+	},
+	"description": "Lightweight markdown viewer and editor",
+	"author": "liyasthomas",
+	"version": "0.0.1",
+	"devDependencies": {
+		"jshint": "^2.10.2"
+	},
+	"scripts": {
+		"test": "jshint travis.js"
+	}
+}

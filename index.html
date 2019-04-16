@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>markdown</title>
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<style>
+	:root {
+		--font-color: #333;
+		--bg-color: #fff;
+	}
+
+	[data-theme="dark"] {
+		--font-color: #fff;
+		--bg-color: #161625;
+	}
+
+	* {
+		box-sizing: border-box;
+		outline: 0;
+		border: 0;
+		font-family: 'Nunito', 'Roboto', 'Noto', sans-serif;
+	}
+
+	body {
+		margin: 0;
+		-webkit-tap-highlight-color: transparent;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		user-select: none;
+		background-color: var(--bg-color);
+		color: var(--font-color);
+		width: 100%;
+		height: 100vh;
+	}
+
+	.theme-switch {
+		display: inline-block;
+		height: 32px;
+		position: relative;
+		width: 60px;
+	}
+
+	.theme-switch input {
+		display: none;
+	}
+
+	.slider {
+		background-color: #ccc;
+		bottom: 0;
+		cursor: pointer;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		transition: .2s;
+	}
+
+	.slider:before {
+		background-color: #fff;
+		bottom: 4px;
+		content: "";
+		height: 24px;
+		left: 4px;
+		position: absolute;
+		transition: .2s;
+		width: 24px;
+	}
+
+	input:checked+.slider {
+		background-color: #58DE71;
+	}
+
+	input:checked+.slider:before {
+		transform: translateX(28px);
+	}
+
+	.slider.round {
+		border-radius: 32px;
+	}
+
+	.slider.round:before {
+		border-radius: 100%;
+	}
+
+	.container {
+		display: flex;
+		background-color: #000;
+		width: 100%;
+		height: 100%;
+		flex-direction: column;
+	}
+
+	.header {
+		background-color: #fff;
+	}
+
+	.content {
+		display: flex;
+		flex-grow: 1;
+		overflow: hidden;
+	}
+
+	.markdown {
+		display: inline-flex;
+		flex-grow: 1;
+		background-color: #222;
+		flex-direction: column;
+		overflow: auto;
+	}
+
+	textarea {
+		width: 50vw;
+		height: 100%;
+		resize: none;
+		display: flex;
+		flex-grow: 1;
+		background-color: #777;
+	}
+
+</style>
+
+<body>
+	<div class="container">
+		<div class="header">
+			<span>markdown</span>
+		</div>
+		<div class="content">
+			<div class="editor">
+				<textarea name="" id="getm"></textarea>
+			</div>
+			<div class="markdown" id="content">
+			</div>
+		</div>
+	</div>
+	<script>
+		const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+		function switchTheme(e) {
+			if (e.target.checked) {
+				document.documentElement.setAttribute('data-theme', 'dark');
+			} else {
+				document.documentElement.setAttribute('data-theme', 'light');
+			}
+		}
+		toggleSwitch.addEventListener('change', switchTheme, false);
+		window.onkeyup = keyup;
+
+		function keyup(e) {
+			var mark = document.getElementById('getm').value;
+			document.getElementById('content').innerHTML = marked(mark);
+		}
+
+	</script>
+</body>
+
+</html>
