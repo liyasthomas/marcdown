@@ -2,176 +2,68 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<title>markdown</title>
+	<meta charset='utf-8'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+	<title>markdown - Lightweight markdown viewer and editor</title>
+	<meta name="description" content="Lightweight markdown viewer and editor">
+	<link rel="icon" href="favicon.ico">
+	<meta itemprop="name" content="marcdown">
+	<meta itemprop="description" content="Lightweight markdown viewer and editor">
+	<meta itemprop="image" content="icons/icon-192x192.png">
+	<!-- See https://goo.gl/OOhYW5 -->
+	<link rel="manifest" href="manifest.json">
+	<!-- See https://goo.gl/qRE0vM -->
+	<meta name="theme-color" content="#ffffff">
+	<!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="marcdown">
+	<!-- Add to homescreen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="white-translucent">
+	<meta name="apple-mobile-web-app-title" content="marcdown">
+	<!-- Homescreen icons -->
+	<link rel="apple-touch-icon" href="icons/icon-48x48.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="icons/icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="96x96" href="icons/icon-96x96.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="icons/icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192x192.png">
+	<!-- Tile icon for Windows 8 (144x144 + tile color) -->
+	<meta name="msapplication-TileImage" content="icons/icon-144x144.png">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-tap-highlight" content="no">
+	<!-- OpenGraph -->
+	<meta property="og:site_name" content="marcdown">
+	<meta property="og:url" content="https://liyasthomas.github.io/marcdown">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="marcdown">
+	<meta property="og:description" content="Lightweight markdown viewer and editor">
+	<meta property="og:image" content="icons/icon-144x144.png">
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@liyasthomas">
+	<meta name="twitter:creator" content="@liyasthomas">
+	<meta name="twitter:url" content="https://liyasthomas.github.io/marcdown">
+	<meta name="twitter:title" content="marcdown">
+	<meta name="twitter:description" content="Lightweight markdown viewer and editor">
+	<meta name="twitter:image" content="icons/icon-144x144.png">
+	<!-- Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+	<link rel="stylesheet" href="index.css">
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', function() {
+				navigator.serviceWorker.register('sw.js').then(function(registration) {
+					console.log('ServiceWorker registration successful with scope: ', registration.scope);
+				}).catch(function(err) {
+					console.log('ServiceWorker registration failed: ', err);
+				});
+			});
+		}
+
+	</script>
 	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
-<style>
-	:root {
-		--font-color: #323E48;
-		--bg-color: #dbe6ee;
-		--bfont-color: #318B6F;
-		--dbg-color: rgba(0, 0, 0, 0.1);
-	}
-
-	[data-theme="dark"] {
-		--font-color: #B3C8D8;
-		--bg-color: #323E48;
-		--bfont-color: #9ADECE;
-	}
-
-	* {
-		box-sizing: border-box;
-		outline: 0;
-		border: 0;
-	}
-
-	::-webkit-scrollbar {
-		background-color: var(--dbg-color);
-		width: 8px;
-		height: 8px;
-	}
-
-	::-webkit-scrollbar-thumb:window-inactive,
-	::-webkit-scrollbar-thumb {
-		background: var(--dbg-color);
-	}
-
-	::-webkit-scrollbar-thumb:hover {
-		background: rgba(0, 0, 0, 0.2);
-	}
-
-	::-webkit-scrollbar-thumb:active {
-		background: rgba(0, 0, 0, 0.3);
-	}
-
-	::placeholder {
-		color: var(--font-color);
-	}
-
-	@keyframes fadein {
-		from {
-			opacity: 0;
-		}
-
-		to {
-			opacity: 1;
-		}
-	}
-
-	a {
-		color: var(--bfont-color);
-	}
-
-	body {
-		margin: 0;
-		-webkit-tap-highlight-color: transparent;
-		-webkit-touch-callout: none;
-		-webkit-user-select: none;
-		user-select: none;
-		background-color: var(--bg-color);
-		color: var(--font-color);
-		width: 100%;
-		height: 100vh;
-		font-size: 16px;
-		font-family: "SF Mono", "Lucida Console", Monaco, monospace;
-		line-height: 1.5;
-		animation: fadein .2s;
-	}
-
-	.theme-switch {
-		display: inline-block;
-		height: 16px;
-		position: relative;
-		width: 32px;
-	}
-
-	.theme-switch input {
-		display: none;
-	}
-
-	.slider {
-		background-color: var(--dbg-color);
-		bottom: 0;
-		cursor: pointer;
-		left: 0;
-		position: absolute;
-		right: 0;
-		top: 0;
-		transition: .2s;
-	}
-
-	.slider:before {
-		background-color: var(--dbg-color);
-		bottom: 0px;
-		content: "";
-		height: 16px;
-		left: 0px;
-		position: absolute;
-		transition: .2s;
-		width: 16px;
-	}
-
-	input:checked+.slider {
-		background-color: #58DE71;
-	}
-
-	input:checked+.slider:before {
-		transform: translateX(16px);
-	}
-
-	.slider.round {
-		border-radius: 16px;
-	}
-
-	.slider.round:before {
-		border-radius: 100%;
-	}
-
-	.container {
-		display: flex;
-		width: 100%;
-		height: 100%;
-		flex-direction: column;
-	}
-
-	.header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 16px;
-		background-color: var(--dbg-color);
-	}
-
-	.content {
-		display: flex;
-		flex-grow: 1;
-		overflow: hidden;
-	}
-
-	textarea {
-		width: 50vw;
-		height: 100%;
-		resize: none;
-		display: flex;
-		flex-grow: 1;
-		background-color: var(--bg-color);
-		color: var(--font-color);
-		padding: 16px;
-		line-height: 2;
-		font-size: 14px;
-	}
-
-	.markdown {
-		display: flex;
-		flex-grow: 1;
-		flex-direction: column;
-		overflow: auto;
-		padding: 16px;
-		font-family: 'Nunito', 'Roboto', 'Noto', sans-serif;
-	}
-
-</style>
 
 <body>
 	<div class="container">
@@ -190,27 +82,7 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-
-		function switchTheme(e) {
-			if (e.target.checked) {
-				document.documentElement.setAttribute('data-theme', 'dark');
-			} else {
-				document.documentElement.setAttribute('data-theme', 'light');
-			}
-		}
-		toggleSwitch.addEventListener('change', switchTheme, false);
-
-		function keyup() {
-			var mark = document.getElementById('getm').value;
-			if (mark)
-				document.getElementById('content').innerHTML = marked(mark);
-			else
-				document.getElementById('content').innerHTML = "marcdown will appere here";
-		}
-
-	</script>
+	<script src="index.js"></script>
 </body>
 
 </html>
