@@ -8,20 +8,59 @@
 </head>
 <style>
 	:root {
-		--font-color: #333;
-		--bg-color: #fff;
+		--font-color: #323E48;
+		--bg-color: #dbe6ee;
+		--bfont-color: #318B6F;
+		--dbg-color: rgba(0, 0, 0, 0.1);
 	}
 
 	[data-theme="dark"] {
-		--font-color: #fff;
-		--bg-color: #161625;
+		--font-color: #B3C8D8;
+		--bg-color: #323E48;
+		--bfont-color: #9ADECE;
 	}
 
 	* {
 		box-sizing: border-box;
 		outline: 0;
 		border: 0;
-		font-family: 'Nunito', 'Roboto', 'Noto', sans-serif;
+	}
+
+	::-webkit-scrollbar {
+		background-color: var(--dbg-color);
+		width: 8px;
+		height: 8px;
+	}
+
+	::-webkit-scrollbar-thumb:window-inactive,
+	::-webkit-scrollbar-thumb {
+		background: var(--dbg-color);
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: rgba(0, 0, 0, 0.2);
+	}
+
+	::-webkit-scrollbar-thumb:active {
+		background: rgba(0, 0, 0, 0.3);
+	}
+
+	::placeholder {
+		color: var(--font-color);
+	}
+
+	@keyframes fadein {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	a {
+		color: var(--bfont-color);
 	}
 
 	body {
@@ -34,13 +73,17 @@
 		color: var(--font-color);
 		width: 100%;
 		height: 100vh;
+		font-size: 16px;
+		font-family: "SF Mono", "Lucida Console", Monaco, monospace;
+		line-height: 1.5;
+		animation: fadein .2s;
 	}
 
 	.theme-switch {
 		display: inline-block;
-		height: 32px;
+		height: 16px;
 		position: relative;
-		width: 60px;
+		width: 32px;
 	}
 
 	.theme-switch input {
@@ -48,7 +91,7 @@
 	}
 
 	.slider {
-		background-color: #ccc;
+		background-color: var(--dbg-color);
 		bottom: 0;
 		cursor: pointer;
 		left: 0;
@@ -59,14 +102,14 @@
 	}
 
 	.slider:before {
-		background-color: #fff;
-		bottom: 4px;
+		background-color: var(--dbg-color);
+		bottom: 0px;
 		content: "";
-		height: 24px;
-		left: 4px;
+		height: 16px;
+		left: 0px;
 		position: absolute;
 		transition: .2s;
-		width: 24px;
+		width: 16px;
 	}
 
 	input:checked+.slider {
@@ -74,11 +117,11 @@
 	}
 
 	input:checked+.slider:before {
-		transform: translateX(28px);
+		transform: translateX(16px);
 	}
 
 	.slider.round {
-		border-radius: 32px;
+		border-radius: 16px;
 	}
 
 	.slider.round:before {
@@ -87,14 +130,17 @@
 
 	.container {
 		display: flex;
-		background-color: #000;
 		width: 100%;
 		height: 100%;
 		flex-direction: column;
 	}
 
 	.header {
-		background-color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 16px;
+		background-color: var(--dbg-color);
 	}
 
 	.content {
@@ -103,21 +149,26 @@
 		overflow: hidden;
 	}
 
-	.markdown {
-		display: inline-flex;
-		flex-grow: 1;
-		background-color: #222;
-		flex-direction: column;
-		overflow: auto;
-	}
-
 	textarea {
 		width: 50vw;
 		height: 100%;
 		resize: none;
 		display: flex;
 		flex-grow: 1;
-		background-color: #777;
+		background-color: var(--bg-color);
+		color: var(--font-color);
+		padding: 16px;
+		line-height: 2;
+		font-size: 14px;
+	}
+
+	.markdown {
+		display: flex;
+		flex-grow: 1;
+		flex-direction: column;
+		overflow: auto;
+		padding: 16px;
+		font-family: 'Nunito', 'Roboto', 'Noto', sans-serif;
 	}
 
 </style>
@@ -126,10 +177,14 @@
 	<div class="container">
 		<div class="header">
 			<span>markdown</span>
+			<label class="theme-switch" for="checkbox">
+				<input type="checkbox" id="checkbox">
+				<div class="slider round"></div>
+			</label>
 		</div>
 		<div class="content">
 			<div class="editor">
-				<textarea name="" id="getm"></textarea>
+				<textarea name="" id="getm" placeholder="paste markdown here" oninput="keyup()"></textarea>
 			</div>
 			<div class="markdown" id="content">
 			</div>
@@ -146,11 +201,13 @@
 			}
 		}
 		toggleSwitch.addEventListener('change', switchTheme, false);
-		window.onkeyup = keyup;
 
-		function keyup(e) {
+		function keyup() {
 			var mark = document.getElementById('getm').value;
-			document.getElementById('content').innerHTML = marked(mark);
+			if (mark)
+				document.getElementById('content').innerHTML = marked(mark);
+			else
+				document.getElementById('content').innerHTML = "marcdown will appere here";
 		}
 
 	</script>
