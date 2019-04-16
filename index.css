@@ -1,7 +1,7 @@
 @font-face {
-	font-family: 'Nunito';
+	font-family: 'Roboto Mono';
 	font-display: fallback;
-	src: local('Nunito Regular'), local('Nunito-Regular'), url(https://fonts.gstatic.com/s/nunito/v10/XRXV3I6Li01BKofINeaB.woff2) format('woff2');
+	src: local('Roboto Mono'), local('RobotoMono-Regular'), url(https://fonts.gstatic.com/s/robotomono/v6/L0x5DF4xlVMF-BfR8bXMIjhLq38.woff2) format('woff2');
 }
 
 :root {
@@ -71,9 +71,25 @@ body {
 	width: 100%;
 	height: 100vh;
 	font-size: 16px;
-	font-family: "SF Mono", "Lucida Console", Monaco, monospace;
+	font-family: 'Roboto Mono', "SF Mono", "Lucida Console", Monaco, monospace;
 	line-height: 1.5;
 	animation: fadein .2s;
+}
+
+.container {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px;
+	background-color: var(--dbg-color);
+	font-weight: 600;
 }
 
 .theme-switch {
@@ -125,21 +141,6 @@ input:checked + .slider:before {
 	border-radius: 100%;
 }
 
-.container {
-	display: flex;
-	width: 100%;
-	height: 100%;
-	flex-direction: column;
-}
-
-.header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 16px;
-	background-color: var(--dbg-color);
-}
-
 .content {
 	display: flex;
 	flex-grow: 1;
@@ -156,7 +157,9 @@ textarea {
 	color: var(--font-color);
 	padding: 16px;
 	line-height: 2;
-	font-size: 14px;
+	font-size: 16px;
+	font-weight: 600;
+	font-family: 'Roboto Mono', "SF Mono", "Lucida Console", Monaco, monospace;
 }
 
 .markdown {
@@ -165,5 +168,10 @@ textarea {
 	flex-direction: column;
 	overflow: auto;
 	padding: 16px;
-	font-family: 'Nunito', 'Roboto', 'Noto', sans-serif;
+	font-family: 'Roboto', 'Noto', sans-serif;
+}
+
+pre,
+code {
+	font-family: 'Roboto Mono', "SF Mono", "Lucida Console", Monaco, monospace;
 }
