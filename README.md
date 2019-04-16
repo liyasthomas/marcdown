@@ -15,7 +15,7 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 [![Build Status](https://travis-ci.org/liyasthomas/marcdown.svg?branch=master)](https://travis-ci.org/liyasthomas/marcdown) [![GitHub release](https://img.shields.io/github/release/liyasthomas/marcdown/all.svg)](https://github.com/liyasthomas/marcdown/releases/latest) [![repo size](https://img.shields.io/github/repo-size/liyasthomas/marcdown.svg)](https://github.com/liyasthomas/marcdown/archive/master.zip) [![license](https://img.shields.io/github/license/liyasthomas/marcdown.svg)](https://github.com/liyasthomas/marcdown/blob/master/LICENSE) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/liyasthomas/marcdown/issues) [![Website](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?label=website)](https://liyas-thomas.firebaseapp.com) [![Donate](https://img.shields.io/badge/$-donate-ff69b4.svg)](https://www.paypal.me/liyascthomas)
 
-# <img src="https://raw.githubusercontent.com/liyasthomas/marcdown/master/assets/images/favicon.png" alt="marcdown" width="32"> marcdown
+# <img src="icons/icon-48x48.png" alt="marcdown" width="32"> marcdown
 
 ### 👻 Lightweight markdown viewer and editor by [Liyas Thomas](https://github.com/liyasthomas)
 
