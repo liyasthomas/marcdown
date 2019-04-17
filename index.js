@@ -47,3 +47,10 @@ var openFile = function (e) {
 	};
 	reader.readAsText(input.files[0]);
 };
+document.onkeyup = function (e) {
+	if (e.altKey && e.which == 79) {
+		document.getElementById("file").click();
+	} else if (e.altKey && e.which == 83) {
+		document.getElementById("save").click();
+	}
+};
