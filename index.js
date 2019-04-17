@@ -1,10 +1,16 @@
 function keyup() {
 	var mark = document.getElementById('getm').value;
-	if (mark)
+	var regex = /\s+/gi;
+	if (mark) {
 		document.getElementById('content').innerHTML = marked(mark);
-	else
+		var wordCount = mark.trim().replace(regex, ' ').split(' ').length;
+		document.getElementById('wordcount').innerHTML = wordCount + " words";
+	} else {
 		document.getElementById('content').innerHTML = "";
+		document.getElementById('wordcount').innerHTML = "";
+	}
 }
+
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
 function switchTheme(e) {

@@ -91,6 +91,10 @@ body {
 	font-weight: 600;
 }
 
+.header span {
+	padding: 0 8px;
+}
+
 .theme-switch {
 	display: inline-block;
 	height: 16px;
