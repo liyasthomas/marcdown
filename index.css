@@ -5,16 +5,16 @@
 }
 
 :root {
-	--font-color: #274258;
-	--bg-color: #dbe6ee;
-	--bfont-color: #328b6e;
+	--font-color: #2B4459;
+	--bg-color: #DAE5ED;
+	--afont-color: #3CAD89;
 	--dbg-color: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] {
-	--font-color: #dbe6ee;
-	--bg-color: #274258;
-	--bfont-color: #9ADECE;
+	--font-color: #DAE5ED;
+	--bg-color: #2B4459;
+	--afont-color: #9ADECE;
 }
 
 * {
@@ -46,6 +46,10 @@
 	color: var(--font-color);
 }
 
+::selection {
+	background: #C6D5DD;
+}
+
 @keyframes fadein {
 	from {
 		opacity: 0;
@@ -57,7 +61,7 @@
 }
 
 a {
-	color: var(--bfont-color);
+	color: var(--afont-color);
 }
 
 body {
@@ -115,6 +119,14 @@ body {
 	right: 0;
 	top: 0;
 	transition: .2s;
+}
+
+.slider:hover:before {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.slider:active:before {
+	background: rgba(0, 0, 0, 0.3);
 }
 
 .slider:before {
@@ -177,4 +189,9 @@ textarea {
 pre,
 code {
 	font-family: 'Roboto Mono', "SF Mono", "Lucida Console", Monaco, monospace;
+}
+
+hr {
+	width: 100%;
+	border: 1px solid var(--dbg-color);
 }
