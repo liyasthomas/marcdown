@@ -27,11 +27,12 @@
 	background-color: var(--dbg-color);
 	width: 8px;
 	height: 8px;
+	border-radius: 8px;
 }
 
-::-webkit-scrollbar-thumb:window-inactive,
 ::-webkit-scrollbar-thumb {
 	background: var(--dbg-color);
+	border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -210,6 +211,7 @@ pre {
 	background-color: var(--dbg-color);
 	padding: 8px;
 	border-radius: 8px;
+	white-space: pre-wrap;
 }
 
 blockquote {
