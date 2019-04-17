@@ -5,15 +5,15 @@
 }
 
 :root {
-	--font-color: #323E48;
+	--font-color: #274258;
 	--bg-color: #dbe6ee;
-	--bfont-color: #318B6F;
+	--bfont-color: #328b6e;
 	--dbg-color: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] {
-	--font-color: #B3C8D8;
-	--bg-color: #323E48;
+	--font-color: #dbe6ee;
+	--bg-color: #274258;
 	--bfont-color: #9ADECE;
 }
 
@@ -88,7 +88,6 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	padding: 16px;
-	background-color: var(--dbg-color);
 	font-weight: 600;
 }
 

@@ -3,7 +3,7 @@ function keyup() {
 	if (mark)
 		document.getElementById('content').innerHTML = marked(mark);
 	else
-		document.getElementById('content').innerHTML = "marcdown will appere here";
+		document.getElementById('content').innerHTML = "";
 }
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
