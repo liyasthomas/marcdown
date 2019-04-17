@@ -76,7 +76,7 @@ body {
 	height: 100vh;
 	font-size: 16px;
 	font-family: 'Roboto Mono', "SF Mono", "Lucida Console", Monaco, monospace;
-	line-height: 1.5;
+	line-height: 2;
 	animation: fadein .2s;
 }
 
@@ -186,11 +186,30 @@ textarea {
 	font-family: 'Segoe UI', 'Arial', 'Roboto', 'Noto', sans-serif;
 }
 
+h1,
+h2 {
+	border-bottom: 1px solid var(--dbg-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+	margin: 4px 0;
+}
+
 pre,
 code {
 	font-family: 'Roboto Mono', "SF Mono", "Lucida Console", Monaco, monospace;
 	font-size: 16px;
 	font-weight: 600;
+}
+
+blockquote {
+	border-left: 2px solid var(--dbg-color);
+	padding-left: 8px;
+	margin-left: 0;
 }
 
 hr {
