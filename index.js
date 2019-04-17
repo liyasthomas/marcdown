@@ -43,6 +43,7 @@ var openFile = function (e) {
 	var reader = new FileReader();
 	reader.onload = function () {
 		document.getElementById('getm').value = reader.result;
+		keyup();
 	};
 	reader.readAsText(input.files[0]);
 };
