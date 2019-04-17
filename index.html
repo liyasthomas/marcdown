@@ -5,7 +5,7 @@
 	<meta charset='utf-8'>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
-	<title>markdown - Lightweight markdown viewer and editor</title>
+	<title>marcdown - Lightweight markdown viewer and editor</title>
 	<meta name="description" content="Lightweight markdown viewer and editor">
 	<link rel="icon" href="favicon.ico">
 	<meta itemprop="name" content="marcdown">
@@ -71,6 +71,11 @@
 			<div>marcdown</div>
 			<div>
 				<span id="wordcount"></span>
+				<label class="file">
+					Open
+					<input type='file' accept=".txt,.text,.md,.markdown,.markdn,.mdown,.svg" onchange='openFile(event)'>
+				</label>
+				<button type="button" onclick="download();" id="save" disabled>Save</button>
 				<span>🌙</span>
 				<label class="theme-switch" for="checkbox">
 					<input type="checkbox" id="checkbox">
@@ -80,7 +85,7 @@
 		</div>
 		<div class="content">
 			<div class="editor">
-				<textarea name="" id="getm" placeholder="paste markdown here ✨" oninput="keyup()" autofocus></textarea>
+				<textarea name="markdown" id="getm" placeholder="paste markdown here ✨" oninput="keyup()" autofocus></textarea>
 			</div>
 			<div class="markdown" id="content">
 			</div>

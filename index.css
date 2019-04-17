@@ -7,14 +7,14 @@
 :root {
 	--font-color: #2B4459;
 	--bg-color: #DAE5ED;
-	--afont-color: #3CAD89;
+	--afont-color: #4865d8;
 	--dbg-color: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] {
 	--font-color: #DAE5ED;
 	--bg-color: #2B4459;
-	--afont-color: #9ADECE;
+	--afont-color: #6afca7;
 }
 
 * {
@@ -100,6 +100,26 @@ body {
 	padding: 0 8px;
 }
 
+.file,
+button {
+	font-weight: 600;
+	font-family: 'Roboto Mono', "SF Mono", "Lucida Console", Monaco, monospace;
+	padding: 8px 16px;
+	background-color: transparent;
+	color: var(--afont-color);
+	cursor: pointer;
+	font-size: 16px;
+}
+
+button[disabled] {
+	opacity: .5;
+	pointer-events: none;
+}
+
+input[type="file"] {
+	display: none;
+}
+
 .theme-switch {
 	display: inline-block;
 	height: 16px;
@@ -142,7 +162,7 @@ body {
 }
 
 input:checked + .slider {
-	background-color: #58DE71;
+	background-color: var(--afont-color);
 }
 
 input:checked + .slider:before {
