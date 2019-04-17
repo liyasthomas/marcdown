@@ -34,7 +34,7 @@
 			"type": "image/png"
 		}
 	],
-	"start_url": "/",
+	"start_url": "index.html",
 	"display": "standalone",
 	"theme_color": "#dbe6ee",
 	"background_color": "#dbe6ee"
