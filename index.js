@@ -3,7 +3,7 @@ function keyup() {
 	var regex = /\s+/gi;
 	if (mark) {
 		document.getElementById('content').innerHTML = marked(mark);
-		var wordCount = mark.trim().replace(regex, ' ').split(' ').length;
+		var wordCount = document.getElementById('content').innerText.trim().replace(regex, ' ').split(' ').length;
 		document.getElementById('wordcount').innerHTML = wordCount + " words";
 	} else {
 		document.getElementById('content').innerHTML = "";

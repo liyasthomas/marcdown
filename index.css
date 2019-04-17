@@ -206,13 +206,24 @@ code {
 	font-weight: 600;
 }
 
+pre {
+	background-color: var(--dbg-color);
+	padding: 8px;
+	border-radius: 8px;
+}
+
 blockquote {
 	border-left: 2px solid var(--dbg-color);
-	padding-left: 8px;
+	padding-left: 16px;
 	margin-left: 0;
 }
 
 hr {
 	width: 100%;
+	border: 1px solid var(--dbg-color);
+}
+
+table,
+td {
 	border: 1px solid var(--dbg-color);
 }
