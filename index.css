@@ -183,12 +183,14 @@ textarea {
 	flex-direction: column;
 	overflow: auto;
 	padding: 16px;
-	font-family: 'Roboto', 'Noto', sans-serif;
+	font-family: 'Segoe UI', 'Arial', 'Roboto', 'Noto', sans-serif;
 }
 
 pre,
 code {
 	font-family: 'Roboto Mono', "SF Mono", "Lucida Console", Monaco, monospace;
+	font-size: 16px;
+	font-weight: 600;
 }
 
 hr {
