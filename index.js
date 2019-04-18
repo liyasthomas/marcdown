@@ -4,7 +4,9 @@ function keyup() {
 	if (mark != '') {
 		document.getElementById('content').innerHTML = marked(mark);
 		var wordCount = document.getElementById('content').innerText.trim().replace(regex, ' ').split(' ').length;
+		var charCount = document.getElementById('content').innerText.replace(regex, '').length;
 		document.getElementById('wordcount').innerHTML = wordCount + " words";
+		document.getElementById('charcount').innerHTML = charCount + " chars";
 		document.getElementById('save').disabled = false;
 		document.querySelectorAll('pre code').forEach((block) => {
 			hljs.highlightBlock(block);
@@ -12,6 +14,7 @@ function keyup() {
 	} else {
 		document.getElementById('content').innerHTML = "";
 		document.getElementById('wordcount').innerHTML = "";
+		document.getElementById('charcount').innerHTML = "";
 		document.getElementById('save').disabled = true;
 	}
 }
