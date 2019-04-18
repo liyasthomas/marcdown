@@ -209,16 +209,18 @@ textarea {
 }
 
 h1,
-h2 {
-	border-bottom: 1px solid var(--dbg-color);
-}
-
-h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 p {
 	margin: 4px 0;
+}
+
+h1,
+h2 {
+	border-bottom: 1px solid var(--dbg-color);
 }
 
 pre,
@@ -244,7 +246,26 @@ hr {
 	border: 1px solid var(--dbg-color);
 }
 
-table,
-td {
+table {
+	border-collapse: separate;
 	border: 1px solid var(--dbg-color);
+	border-radius: 8px;
+	border-spacing: 0;
+}
+
+td,
+th {
+	border-left: 1px solid var(--dbg-color);
+	border-top: 1px solid var(--dbg-color);
+	text-align: left;
+	padding: 8px 16px;
+}
+
+th {
+	border-top: none;
+}
+
+td:first-child,
+th:first-child {
+	border-left: none;
 }
