@@ -6,6 +6,9 @@ function keyup() {
 		var wordCount = document.getElementById('content').innerText.trim().replace(regex, ' ').split(' ').length;
 		document.getElementById('wordcount').innerHTML = wordCount + " words";
 		document.getElementById('save').disabled = false;
+		document.querySelectorAll('pre code').forEach((block) => {
+			hljs.highlightBlock(block);
+		});
 	} else {
 		document.getElementById('content').innerHTML = "";
 		document.getElementById('wordcount').innerHTML = "";

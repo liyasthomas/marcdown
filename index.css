@@ -226,12 +226,10 @@ code {
 	font-family: 'Roboto Mono', "SF Mono", "Lucida Console", Monaco, monospace;
 	font-size: 16px;
 	font-weight: 600;
+	border-radius: 8px;
 }
 
 pre {
-	background-color: var(--dbg-color);
-	padding: 8px;
-	border-radius: 8px;
 	white-space: pre-wrap;
 }
 
