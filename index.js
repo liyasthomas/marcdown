@@ -1,21 +1,35 @@
+function mouseup() {
+	var mark = document.getElementById('getm'),
+		lineno = document.getElementById('lineno'),
+		colno = document.getElementById('colno'),
+		textLines = mark.value.substr(0, mark.selectionStart).split("\n");
+	lineno.innerHTML = "Line " + textLines.length;
+	colno.innerHTML = "Col " + textLines[textLines.length - 1].length;
+}
+
 function keyup() {
-	var mark = document.getElementById('getm').value;
-	var regex = /\s+/gi;
-	if (mark != '') {
-		document.getElementById('content').innerHTML = marked(mark);
-		var wordCount = document.getElementById('content').innerText.trim().replace(regex, ' ').split(' ').length;
-		var charCount = document.getElementById('content').innerText.replace(regex, '').length;
-		document.getElementById('wordcount').innerHTML = wordCount + " words";
-		document.getElementById('charcount').innerHTML = charCount + " chars";
-		document.getElementById('save').disabled = false;
+	var mark = document.getElementById('getm').value,
+		content = document.getElementById('content'),
+		wordcount = document.getElementById('wordcount'),
+		charcount = document.getElementById('charcount'),
+		save = document.getElementById('save'),
+		regex = /\s+/gi;
+	if (mark !== '') {
+		content.innerHTML = marked(mark);
+		var wordCount = content.innerText.trim().replace(regex, ' ').split(' ').length,
+			charCount = content.innerText.replace(regex, '').length;
+		wordcount.innerHTML = wordCount + " words";
+		charcount.innerHTML = charCount + " chars";
+		save.disabled = false;
 		document.querySelectorAll('pre code').forEach((block) => {
 			hljs.highlightBlock(block);
 		});
+		mouseup();
 	} else {
-		document.getElementById('content').innerHTML = "";
-		document.getElementById('wordcount').innerHTML = "";
-		document.getElementById('charcount').innerHTML = "";
-		document.getElementById('save').disabled = true;
+		content.innerHTML = "";
+		wordcount.innerHTML = "0 words";
+		charcount.innerHTML = "0 chars";
+		save.disabled = true;
 	}
 }
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
