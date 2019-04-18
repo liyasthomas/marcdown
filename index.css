@@ -24,7 +24,6 @@
 }
 
 ::-webkit-scrollbar {
-	background-color: var(--dbg-color);
 	width: 8px;
 	height: 8px;
 	border-radius: 8px;
@@ -93,7 +92,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 16px;
+	padding: 8px 16px;
 	font-weight: 600;
 }
 
@@ -229,10 +228,6 @@ code {
 	font-size: 16px;
 	font-weight: 600;
 	border-radius: 8px;
-}
-
-pre {
-	white-space: pre-wrap;
 }
 
 blockquote {
