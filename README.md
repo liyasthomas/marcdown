@@ -51,7 +51,8 @@ You're done!
 
 ## Built with
 
-* **[MarkedJS](https://marked.js.org)** - Sample
+* **[MarkedJS](https://marked.js.org)** - For markdown parser
+* **[highlightjs](https://highlightjs.org)** - For code highlighting
 * **[Chromium](https://github.com/chromium/chromium)** - Thanks for being so fast!
 * HTML - For the web framework
 * CSS - For styling components
@@ -96,6 +97,7 @@ See the [CHANGELOG](CHANGELOG.md) file for details.
 
 ### Thanks
 * [MarkedJS](https://marked.js.org)
+* [highlightjs](https://highlightjs.org)
 
 See the list of [contributors](https://github.com/liyasthomas/marcdown/graphs/contributors) who participated in this project.
 
@@ -111,4 +113,5 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 
 * Hat tip to anyone who's code was used
 * Inspirations:
+	* [StackEdit](https://stackedit.io)
 	* [Dribbble](https://dribbble.com)
