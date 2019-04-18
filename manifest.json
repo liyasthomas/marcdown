@@ -1,6 +1,6 @@
 {
-	"name": "marcdown",
-	"short_name": "marcdown",
+	"name": "Marcdown",
+	"short_name": "Marcdown",
 	"description": "Lightweight markdown viewer and editor",
 	"icons": [
 		{
@@ -36,6 +36,6 @@
 	],
 	"start_url": "index.html",
 	"display": "standalone",
-	"theme_color": "#dbe6ee",
-	"background_color": "#dbe6ee"
+	"theme_color": "#DAE5ED",
+	"background_color": "#DAE5ED"
 }

@@ -9,12 +9,17 @@
 	--bg-color: #DAE5ED;
 	--afont-color: #4865d8;
 	--dbg-color: rgba(0, 0, 0, 0.1);
+	--dbgh-color: rgba(0, 0, 0, 0.2);
+	--dbga-color: rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="dark"] {
 	--font-color: #DAE5ED;
 	--bg-color: #2B4459;
 	--afont-color: #6afca7;
+	--dbg-color: rgba(255, 255, 255, 0.1);
+	--dbgh-color: rgba(255, 255, 255, 0.2);
+	--dbga-color: rgba(255, 255, 255, 0.3);
 }
 
 * {
@@ -35,11 +40,11 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: rgba(0, 0, 0, 0.2);
+	background: var(--dbgh-color);
 }
 
 ::-webkit-scrollbar-thumb:active {
-	background: rgba(0, 0, 0, 0.3);
+	background: var(--dbga-color);
 }
 
 ::placeholder {
@@ -132,7 +137,7 @@ input[type="file"] {
 }
 
 .slider {
-	background-color: var(--dbg-color);
+	background-color: rgba(0, 0, 0, 0.1);
 	bottom: 0;
 	cursor: pointer;
 	left: 0;
@@ -151,7 +156,7 @@ input[type="file"] {
 }
 
 .slider:before {
-	background-color: var(--dbg-color);
+	background-color: rgba(0, 0, 0, 0.1);
 	bottom: 0px;
 	content: "";
 	height: 16px;
