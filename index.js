@@ -1,14 +1,13 @@
-function mouseup() {
-	var mark = document.getElementById('getm'),
+const mouseup = () => {
+	let mark = document.getElementById('getm'),
 		lineno = document.getElementById('lineno'),
 		colno = document.getElementById('colno'),
 		textLines = mark.value.substr(0, mark.selectionStart).split("\n");
 	lineno.innerHTML = "Line " + textLines.length;
 	colno.innerHTML = "Col " + textLines[textLines.length - 1].length;
 }
-
-function keyup() {
-	var mark = document.getElementById('getm').value,
+const keyup = () => {
+	let mark = document.getElementById('getm').value,
 		content = document.getElementById('content'),
 		wordcount = document.getElementById('wordcount'),
 		charcount = document.getElementById('charcount'),
@@ -16,7 +15,7 @@ function keyup() {
 		regex = /\s+/gi;
 	if (mark !== '') {
 		content.innerHTML = marked(mark);
-		var wordCount = content.innerText.trim().replace(regex, ' ').split(' ').length,
+		let wordCount = content.innerText.trim().replace(regex, ' ').split(' ').length,
 			charCount = content.innerText.replace(regex, '').length;
 		wordcount.innerHTML = wordCount + " words";
 		charcount.innerHTML = charCount + " chars";
@@ -33,8 +32,7 @@ function keyup() {
 	}
 }
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-
-function switchTheme(e) {
+const switchTheme = (e) => {
 	if (e.target.checked) {
 		document.documentElement.setAttribute('data-theme', 'dark');
 	} else {
@@ -42,14 +40,13 @@ function switchTheme(e) {
 	}
 }
 toggleSwitch.addEventListener('change', switchTheme, false);
-
-function download() {
-	var text = document.getElementById("getm").value;
+const download = () => {
+	let text = document.getElementById("getm").value;
 	text = text.replace(/\n/g, "\r\n");
-	var blob = new Blob([text], {
+	let blob = new Blob([text], {
 		type: "text/plain"
 	});
-	var anchor = document.createElement("a");
+	let anchor = document.createElement("a");
 	anchor.download = "marcdown.md";
 	anchor.href = window.URL.createObjectURL(blob);
 	anchor.target = "_blank";
@@ -58,9 +55,9 @@ function download() {
 	anchor.click();
 	document.body.removeChild(anchor);
 }
-var openFile = function (e) {
-	var input = e.target;
-	var reader = new FileReader();
+let openFile = (e) => {
+	let input = e.target;
+	let reader = new FileReader();
 	reader.onload = function () {
 		document.getElementById('getm').value = reader.result;
 		keyup();
@@ -68,7 +65,7 @@ var openFile = function (e) {
 	};
 	reader.readAsText(input.files[0]);
 };
-document.onkeyup = function (e) {
+document.onkeyup = (e) => {
 	if (e.altKey && e.which == 79) {
 		document.getElementById("file").click();
 	} else if (e.altKey && e.which == 83) {
