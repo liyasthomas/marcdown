@@ -93,16 +93,13 @@ body {
 	flex-direction: column;
 }
 
-.header {
+header,
+footer {
 	display: flex;
 	align-items: center;
 	padding: 8px 16px;
 	font-weight: 600;
 	z-index: 1;
-}
-
-.header span {
-	padding: 0 8px;
 }
 
 .tools {
@@ -113,6 +110,10 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.tools span {
+	padding: 0 8px;
 }
 
 .file,
