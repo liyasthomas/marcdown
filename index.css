@@ -29,14 +29,14 @@
 }
 
 ::-webkit-scrollbar {
-	width: 8px;
-	height: 8px;
-	border-radius: 8px;
+	width: 4px;
+	height: 4px;
+	border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
 	background: var(--dbg-color);
-	border-radius: 8px;
+	border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -154,6 +154,7 @@ input[type="file"] {
 	right: 0;
 	top: 0;
 	transition: .2s;
+	border-radius: 8px;
 }
 
 .slider:hover:before {
@@ -166,13 +167,14 @@ input[type="file"] {
 
 .slider:before {
 	background-color: rgba(0, 0, 0, 0.1);
-	bottom: 0px;
+	bottom: 0;
 	content: "";
 	height: 16px;
-	left: 0px;
+	left: 0;
 	position: absolute;
 	transition: .2s;
 	width: 16px;
+	border-radius: 8px;
 }
 
 input:checked + .slider {
@@ -181,14 +183,6 @@ input:checked + .slider {
 
 input:checked + .slider:before {
 	transform: translateX(16px);
-}
-
-.slider.round {
-	border-radius: 16px;
-}
-
-.slider.round:before {
-	border-radius: 100%;
 }
 
 .content {

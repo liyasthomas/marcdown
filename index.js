@@ -127,6 +127,14 @@ const apply = (e) => {
 			var myValueBefore = "![alt text](image.jpg)",
 				myValueAfter = "";
 			break;
+		case 'hr':
+			var myValueBefore = "---\n",
+				myValueAfter = "";
+			break;
+		case 'table':
+			var myValueBefore = "| Header | Title |\n| ----------- | ----------- |\n| Paragraph | Text |\n",
+				myValueAfter = "";
+			break;
 	}
 	if (document.selection) {
 		myField.focus();

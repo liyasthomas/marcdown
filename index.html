@@ -82,14 +82,16 @@
 					<button onclick="apply('ul')">●</button>
 					<button onclick="apply('ol')">1.</button>
 					<button onclick="apply('bq')">”</button>
-					<button onclick="apply('code')">&lt;></button>
+					<button onclick="apply('code')">&lt; ></button>
 					<button onclick="apply('link')">a</button>
-					<button onclick="apply('check')">[]</button>
-					<button onclick="apply('image')">i</button>
+					<button onclick="apply('check')">✔</button>
+					<button onclick="apply('image')">❤</button>
+					<button onclick="apply('hr')">——</button>
+					<button onclick="apply('table')">⚏</button>
 				</div>
 				<div>
 					<span>
-						<label class="file">
+						<label class="file" for="file">
 							Open
 							<input id="file" type='file' accept=".txt,.text,.md,.markdown,.markdn,.mdown,.htm,.html,.svg" onchange='openFile(event)'>
 						</label>
@@ -104,11 +106,10 @@
 			</div>
 		</div>
 		<div class="content">
-			<div class="editor">
+			<div>
 				<textarea name="markdown" id="getm" placeholder="paste markdown here ✨" onkeyup="keyup()" onmouseup="mouseup()" autofocus></textarea>
 			</div>
-			<div class="markdown" id="content">
-			</div>
+			<div class="markdown" id="content"></div>
 		</div>
 		<div class="header">
 			<div class="tools">
