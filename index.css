@@ -98,6 +98,7 @@ body {
 	align-items: center;
 	padding: 8px 16px;
 	font-weight: 600;
+	z-index: 1;
 }
 
 .header span {
@@ -204,6 +205,7 @@ textarea {
 	font-size: 16px;
 	font-weight: 600;
 	font-family: 'Roboto Mono', "SF Mono", "Lucida Console", Monaco, monospace;
+	z-index: 0;
 }
 
 .markdown {
