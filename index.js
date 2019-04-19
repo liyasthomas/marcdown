@@ -91,6 +91,14 @@ const apply = (e) => {
 			var myValueBefore = "# ",
 				myValueAfter = "";
 			break;
+		case 'h2':
+			var myValueBefore = "## ",
+				myValueAfter = "";
+			break;
+		case 'h3':
+			var myValueBefore = "### ",
+				myValueAfter = "";
+			break;
 		case 'bq':
 			var myValueBefore = "> ",
 				myValueAfter = "";
@@ -104,8 +112,8 @@ const apply = (e) => {
 				myValueAfter = "";
 			break;
 		case 'code':
-			var myValueBefore = "`",
-				myValueAfter = "`";
+			var myValueBefore = "```",
+				myValueAfter = "```";
 			break;
 		case 'link':
 			var myValueBefore = "[",
@@ -113,6 +121,10 @@ const apply = (e) => {
 			break;
 		case 'check':
 			var myValueBefore = "- [x] ",
+				myValueAfter = "";
+			break;
+		case 'image':
+			var myValueBefore = "![alt text](image.jpg)",
 				myValueAfter = "";
 			break;
 	}
