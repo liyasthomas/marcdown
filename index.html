@@ -70,30 +70,32 @@
 <body>
 	<div class="container">
 		<div class="header">
-			<div>
-				Marcdown
-				<button onclick="apply('bold')"><strong>B</strong></button>
-				<button onclick="apply('italic')"><i>I</i></button>
-				<button onclick="apply('strike')"><strike>S</strike></button>
-				<button onclick="apply('h1')"><strong>H1</strong></button>
-				<button onclick="apply('bq')"><strong>”</strong></button>
-				<button onclick="apply('ul')"><strong>*</strong></button>
-				<button onclick="apply('ol')"><strong>1.</strong></button>
-				<button onclick="apply('code')"><strong>&lt;></strong></button>
-				<button onclick="apply('link')"><strong>a</strong></button>
-				<button onclick="apply('check')"><strong>[]</strong></button>
-			</div>
-			<div>
-				<label class="file">
-					Open
-					<input id="file" type='file' accept=".txt,.text,.md,.markdown,.markdn,.mdown,.htm,.html,.svg" onchange='openFile(event)'>
-				</label>
-				<button type="button" onclick="download();" id="save" disabled>Save</button>
-				<span>🌙</span>
-				<label class="theme-switch" for="checkbox">
-					<input type="checkbox" id="checkbox">
-					<div class="slider round"></div>
-				</label>
+			<div class="tools">
+				<div>
+					<span>Marcdown</span>
+					<button onclick="apply('bold')"><strong>B</strong></button>
+					<button onclick="apply('italic')"><i>I</i></button>
+					<button onclick="apply('strike')"><strike>S</strike></button>
+					<button onclick="apply('h1')"><strong>H1</strong></button>
+					<button onclick="apply('bq')"><strong>”</strong></button>
+					<button onclick="apply('ul')"><strong>*</strong></button>
+					<button onclick="apply('ol')"><strong>1.</strong></button>
+					<button onclick="apply('code')"><strong>&lt;></strong></button>
+					<button onclick="apply('link')"><strong>a</strong></button>
+					<button onclick="apply('check')"><strong>[]</strong></button>
+				</div>
+				<div>
+					<label class="file">
+						Open
+						<input id="file" type='file' accept=".txt,.text,.md,.markdown,.markdn,.mdown,.htm,.html,.svg" onchange='openFile(event)'>
+					</label>
+					<button type="button" onclick="download();" id="save" disabled>Save</button>
+					<span>🌙</span>
+					<label class="theme-switch" for="checkbox">
+						<input type="checkbox" id="checkbox">
+						<div class="slider round"></div>
+					</label>
+				</div>
 			</div>
 		</div>
 		<div class="content">
@@ -104,13 +106,15 @@
 			</div>
 		</div>
 		<div class="header">
-			<div>
-				<span id="lineno"></span>
-				<span id="colno"></span>
-			</div>
-			<div>
-				<span id="charcount"></span>
-				<span id="wordcount"></span>
+			<div class="tools">
+				<div>
+					<span id="lineno"></span>
+					<span id="colno"></span>
+				</div>
+				<div>
+					<span id="charcount"></span>
+					<span id="wordcount"></span>
+				</div>
 			</div>
 		</div>
 	</div>
