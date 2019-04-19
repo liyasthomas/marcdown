@@ -85,12 +85,14 @@
 					<button onclick="apply('check')"><strong>[]</strong></button>
 				</div>
 				<div>
-					<label class="file">
-						Open
-						<input id="file" type='file' accept=".txt,.text,.md,.markdown,.markdn,.mdown,.htm,.html,.svg" onchange='openFile(event)'>
-					</label>
+					<span>
+						<label class="file">
+							Open
+							<input id="file" type='file' accept=".txt,.text,.md,.markdown,.markdn,.mdown,.htm,.html,.svg" onchange='openFile(event)'>
+						</label>
+					</span>
 					<button type="button" onclick="download();" id="save" disabled>Save</button>
-					<span>🌙</span>
+					🌙
 					<label class="theme-switch" for="checkbox">
 						<input type="checkbox" id="checkbox">
 						<div class="slider round"></div>

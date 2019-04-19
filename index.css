@@ -106,7 +106,7 @@ body {
 
 .tools {
 	display: flex;
-	width: 100%;
+	flex-grow: 1;
 	overflow-x: auto;
 	white-space: nowrap;
 	display: flex;
