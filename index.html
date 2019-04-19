@@ -70,11 +70,23 @@
 <body>
 	<div class="container">
 		<div class="header">
-			<div>Marcdown</div>
+			<div>
+				Marcdown
+				<button onclick="apply('bold')"><strong>B</strong></button>
+				<button onclick="apply('italic')"><i>I</i></button>
+				<button onclick="apply('strike')"><strike>S</strike></button>
+				<button onclick="apply('h1')"><strong>H1</strong></button>
+				<button onclick="apply('bq')"><strong>”</strong></button>
+				<button onclick="apply('ul')"><strong>*</strong></button>
+				<button onclick="apply('ol')"><strong>1.</strong></button>
+				<button onclick="apply('code')"><strong>&lt;></strong></button>
+				<button onclick="apply('link')"><strong>a</strong></button>
+				<button onclick="apply('check')"><strong>[]</strong></button>
+			</div>
 			<div>
 				<label class="file">
 					Open
-					<input id="file" type='file' accept=".txt,.text,.md,.markdown,.markdn,.mdown,.svg" onchange='openFile(event)'>
+					<input id="file" type='file' accept=".txt,.text,.md,.markdown,.markdn,.mdown,.htm,.html,.svg" onchange='openFile(event)'>
 				</label>
 				<button type="button" onclick="download();" id="save" disabled>Save</button>
 				<span>🌙</span>

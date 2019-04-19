@@ -72,3 +72,60 @@ document.onkeyup = (e) => {
 		document.getElementById("save").click();
 	}
 };
+const apply = (e) => {
+	let myField = document.getElementById("getm");
+	switch (e) {
+		case 'bold':
+			var myValueBefore = "**",
+				myValueAfter = "**";
+			break;
+		case 'italic':
+			var myValueBefore = "*",
+				myValueAfter = "*";
+			break;
+		case 'strike':
+			var myValueBefore = "~",
+				myValueAfter = "~";
+			break;
+		case 'h1':
+			var myValueBefore = "# ",
+				myValueAfter = "";
+			break;
+		case 'bq':
+			var myValueBefore = "> ",
+				myValueAfter = "";
+			break;
+		case 'ol':
+			var myValueBefore = "1. ",
+				myValueAfter = "";
+			break;
+		case 'ul':
+			var myValueBefore = "- ",
+				myValueAfter = "";
+			break;
+		case 'code':
+			var myValueBefore = "`",
+				myValueAfter = "`";
+			break;
+		case 'link':
+			var myValueBefore = "[",
+				myValueAfter = "]()";
+			break;
+		case 'check':
+			var myValueBefore = "- [x] ",
+				myValueAfter = "";
+			break;
+	}
+	if (document.selection) {
+		myField.focus();
+		document.selection.createRange().text = myValueBefore + document.selection.createRange().text + myValueAfter;
+	} else if (myField.selectionStart || myField.selectionStart == '0') {
+		let startPos = myField.selectionStart,
+			endPos = myField.selectionEnd;
+		myField.value = myField.value.substring(0, startPos) + myValueBefore + myField.value.substring(startPos, endPos) + myValueAfter + myField.value.substring(endPos, myField.value.length);
+		myField.selectionStart = startPos + myValueBefore.length;
+		myField.selectionEnd = endPos + myValueBefore.length;
+		myField.focus();
+	}
+	keyup();
+}
