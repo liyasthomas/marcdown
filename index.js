@@ -58,7 +58,7 @@ const download = () => {
 let openFile = (e) => {
 	let input = e.target;
 	let reader = new FileReader();
-	reader.onload = function () {
+	reader.onload = () => {
 		document.getElementById('getm').value = reader.result;
 		keyup();
 		input.value = '';
@@ -73,67 +73,68 @@ document.onkeyup = (e) => {
 	}
 };
 const apply = (e) => {
-	let myField = document.getElementById("getm");
+	let myField = document.getElementById("getm"),
+		myValueBefore, myValueAfter;
 	switch (e) {
 		case 'bold':
-			var myValueBefore = "**",
-				myValueAfter = "**";
+			myValueBefore = "**";
+			myValueAfter = "**";
 			break;
 		case 'italic':
-			var myValueBefore = "*",
-				myValueAfter = "*";
+			myValueBefore = "*";
+			myValueAfter = "*";
 			break;
 		case 'strike':
-			var myValueBefore = "~",
-				myValueAfter = "~";
+			myValueBefore = "~";
+			myValueAfter = "~";
 			break;
 		case 'h1':
-			var myValueBefore = "# ",
-				myValueAfter = "";
+			myValueBefore = "# ";
+			myValueAfter = "";
 			break;
 		case 'h2':
-			var myValueBefore = "## ",
-				myValueAfter = "";
+			myValueBefore = "## ";
+			myValueAfter = "";
 			break;
 		case 'h3':
-			var myValueBefore = "### ",
-				myValueAfter = "";
+			myValueBefore = "### ";
+			myValueAfter = "";
 			break;
 		case 'bq':
-			var myValueBefore = "> ",
-				myValueAfter = "";
+			myValueBefore = "> ";
+			myValueAfter = "";
 			break;
 		case 'ol':
-			var myValueBefore = "1. ",
-				myValueAfter = "";
+			myValueBefore = "1. ";
+			myValueAfter = "";
 			break;
 		case 'ul':
-			var myValueBefore = "- ",
-				myValueAfter = "";
+			myValueBefore = "- ";
+			myValueAfter = "";
 			break;
 		case 'code':
-			var myValueBefore = "```",
-				myValueAfter = "```";
+			myValueBefore = "```";
+			myValueAfter = "```";
 			break;
 		case 'link':
-			var myValueBefore = "[",
-				myValueAfter = "]()";
+			myValueBefore = "[";
+			myValueAfter = "]()";
 			break;
 		case 'check':
-			var myValueBefore = "- [x] ",
-				myValueAfter = "";
+			myValueBefore = "- [x] ";
+			myValueAfter = "";
 			break;
 		case 'image':
-			var myValueBefore = "![alt text](image.jpg)",
-				myValueAfter = "";
+			myValueBefore = "![alt text](image.jpg)";
+			myValueAfter = "";
 			break;
 		case 'hr':
-			var myValueBefore = "---\n",
-				myValueAfter = "";
+			myValueBefore = "---\n";
+			myValueAfter = "";
 			break;
 		case 'table':
-			var myValueBefore = "| Header | Title |\n| ----------- | ----------- |\n| Paragraph | Text |\n",
-				myValueAfter = "";
+			myValueBefore = "| Header | Title |\n| ----------- | ----------- |\n| Paragraph | Text |\n";
+			myValueAfter = "";
 			break;
 	}
 	if (document.selection) {
