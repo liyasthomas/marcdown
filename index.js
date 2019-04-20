@@ -8,15 +8,15 @@ const mouseUp = () => {
 }
 const keyUp = () => {
 	let mark = document.getElementById('getm').value,
-		content = document.getElementById('content'),
+		viewer = document.getElementById('viewer'),
 		wordcount = document.getElementById('wordcount'),
 		charcount = document.getElementById('charcount'),
 		save = document.getElementById('save'),
 		regex = /\s+/gi;
 	if (mark !== '') {
-		content.innerHTML = marked(mark);
-		let wordCount = content.innerText.trim().replace(regex, ' ').split(' ').length,
-			charCount = content.innerText.replace(regex, '').length;
+		viewer.innerHTML = marked(mark);
+		let wordCount = viewer.innerText.trim().replace(regex, ' ').split(' ').length,
+			charCount = viewer.innerText.replace(regex, '').length;
 		wordcount.innerHTML = wordCount + " words";
 		charcount.innerHTML = charCount + " chars";
 		save.disabled = false;
@@ -25,7 +25,7 @@ const keyUp = () => {
 		});
 		mouseUp();
 	} else {
-		content.innerHTML = "";
+		viewer.innerHTML = "";
 		wordcount.innerHTML = "0 words";
 		charcount.innerHTML = "0 chars";
 		save.disabled = true;
@@ -149,4 +149,26 @@ const apply = (e) => {
 		myField.focus();
 	}
 	keyUp();
+}
+const preview = (e) => {
+	let editor = document.getElementById('editor');
+	let viewer = document.getElementById('viewer');
+	let mark = document.getElementById('getm');
+	switch (e) {
+		case 'nill':
+			editor.style.display = 'none';
+			viewer.style.display = 'flex';
+			mark.style.width = "0";
+			break;
+		case 'half':
+			editor.style.display = 'flex';
+			viewer.style.display = 'flex';
+			mark.style.width = "50vw";
+			break;
+		case 'full':
+			editor.style.display = 'flex';
+			viewer.style.display = 'none';
+			mark.style.width = "100vw";
+			break;
+	}
 }

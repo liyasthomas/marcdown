@@ -63,7 +63,7 @@
 
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.6/build/styles/nord.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.6/build/styles/github.min.css">
 	<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.6/build/highlight.min.js"></script>
 </head>
 
@@ -106,18 +106,23 @@
 			</div>
 		</header>
 		<section class="content">
-			<div>
+			<div id="editor">
 				<textarea name="markdown" id="getm" placeholder="paste markdown here ✨" onkeyup="keyUp()" onmouseup="mouseUp()" autofocus></textarea>
 			</div>
-			<div class="markdown" id="content"></div>
+			<div class="markdown" id="viewer"></div>
 		</section>
 		<footer>
 			<div class="tools">
-				<div>
+				<div style="flex: 1 1 0;">
 					<span id="lineno"></span>
 					<span id="colno"></span>
 				</div>
 				<div>
+					<button onclick="preview('nill')">←</button>
+					<button onclick="preview('half')">●</button>
+					<button onclick="preview('full')">→</button>
+				</div>
+				<div style="flex: 1 1 0; text-align: right;">
 					<span id="charcount"></span>
 					<span id="wordcount"></span>
 				</div>
