@@ -1,4 +1,4 @@
-const mouseup = () => {
+const mouseUp = () => {
 	let mark = document.getElementById('getm'),
 		lineno = document.getElementById('lineno'),
 		colno = document.getElementById('colno'),
@@ -6,7 +6,7 @@ const mouseup = () => {
 	lineno.innerHTML = "Line " + textLines.length;
 	colno.innerHTML = "Col " + textLines[textLines.length - 1].length;
 }
-const keyup = () => {
+const keyUp = () => {
 	let mark = document.getElementById('getm').value,
 		content = document.getElementById('content'),
 		wordcount = document.getElementById('wordcount'),
@@ -23,7 +23,7 @@ const keyup = () => {
 		document.querySelectorAll('pre code').forEach((block) => {
 			hljs.highlightBlock(block);
 		});
-		mouseup();
+		mouseUp();
 	} else {
 		content.innerHTML = "";
 		wordcount.innerHTML = "0 words";
@@ -60,7 +60,7 @@ let openFile = (e) => {
 	let reader = new FileReader();
 	reader.onload = () => {
 		document.getElementById('getm').value = reader.result;
-		keyup();
+		keyUp();
 		input.value = '';
 	};
 	reader.readAsText(input.files[0]);
@@ -148,5 +148,5 @@ const apply = (e) => {
 		myField.selectionEnd = endPos + myValueBefore.length;
 		myField.focus();
 	}
-	keyup();
+	keyUp();
 }
