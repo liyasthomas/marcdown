@@ -1,24 +1,24 @@
 const mouseUp = () => {
-	let mark = document.getElementById('getm'),
-		lineno = document.getElementById('lineno'),
-		colno = document.getElementById('colno'),
-		textLines = mark.value.substr(0, mark.selectionStart).split("\n");
-	lineno.innerHTML = "Line " + textLines.length;
-	colno.innerHTML = "Col " + textLines[textLines.length - 1].length;
+	let mark = document.getElementById('getm');
+	let lineno = document.getElementById('lineno');
+	let colno = document.getElementById('colno');
+	let textLines = mark.value.substr(0, mark.selectionStart).split("\n");
+	lineno.innerHTML = `Line ${textLines.length}`;
+	colno.innerHTML = `Col ${textLines[textLines.length - 1].length}`;
 }
 const keyUp = () => {
-	let mark = document.getElementById('getm').value,
-		viewer = document.getElementById('viewer'),
-		wordcount = document.getElementById('wordcount'),
-		charcount = document.getElementById('charcount'),
-		save = document.getElementById('save'),
-		regex = /\s+/gi;
+	let mark = document.getElementById('getm').value;
+	let viewer = document.getElementById('viewer');
+	let wordcount = document.getElementById('wordcount');
+	let charcount = document.getElementById('charcount');
+	let save = document.getElementById('save');
+	let regex = /\s+/gi;
 	if (mark !== '') {
 		viewer.innerHTML = marked(mark);
-		let wordCount = viewer.innerText.trim().replace(regex, ' ').split(' ').length,
-			charCount = viewer.innerText.replace(regex, '').length;
-		wordcount.innerHTML = wordCount + " words";
-		charcount.innerHTML = charCount + " chars";
+		let wordCount = viewer.innerText.trim().replace(regex, ' ').split(' ').length;
+		let charCount = viewer.innerText.replace(regex, '').length;
+		wordcount.innerHTML = `${wordCount} words`;
+		charcount.innerHTML = `${charCount} chars`;
 		save.disabled = false;
 		document.querySelectorAll('pre code').forEach((block) => {
 			hljs.highlightBlock(block);
@@ -32,8 +32,10 @@ const keyUp = () => {
 	}
 }
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-const switchTheme = (e) => {
-	if (e.target.checked) {
+const switchTheme = ({
+	target
+}) => {
+	if (target.checked) {
 		document.documentElement.setAttribute('data-theme', 'dark');
 	} else {
 		document.documentElement.setAttribute('data-theme', 'light');
@@ -55,8 +57,10 @@ const download = () => {
 	anchor.click();
 	document.body.removeChild(anchor);
 }
-let openFile = (e) => {
-	let input = e.target;
+let openFile = ({
+	target
+}) => {
+	let input = target;
 	let reader = new FileReader();
 	reader.onload = () => {
 		document.getElementById('getm').value = reader.result;
@@ -65,16 +69,20 @@ let openFile = (e) => {
 	};
 	reader.readAsText(input.files[0]);
 };
-document.onkeyup = (e) => {
-	if (e.altKey && e.which == 79) {
+document.onkeyup = ({
+	altKey,
+	which
+}) => {
+	if (altKey && which == 79) {
 		document.getElementById("file").click();
-	} else if (e.altKey && e.which == 83) {
+	} else if (altKey && which == 83) {
 		document.getElementById("save").click();
 	}
 };
 const apply = (e) => {
-	let myField = document.getElementById("getm"),
-		myValueBefore, myValueAfter;
+	let myField = document.getElementById("getm");
+	let myValueBefore;
+	let myValueAfter;
 	switch (e) {
 		case 'bold':
 			myValueBefore = "**";
@@ -141,8 +149,8 @@ const apply = (e) => {
 		myField.focus();
 		document.selection.createRange().text = myValueBefore + document.selection.createRange().text + myValueAfter;
 	} else if (myField.selectionStart || myField.selectionStart == '0') {
-		let startPos = myField.selectionStart,
-			endPos = myField.selectionEnd;
+		let startPos = myField.selectionStart;
+		let endPos = myField.selectionEnd;
 		myField.value = myField.value.substring(0, startPos) + myValueBefore + myField.value.substring(startPos, endPos) + myValueAfter + myField.value.substring(endPos, myField.value.length);
 		myField.selectionStart = startPos + myValueBefore.length;
 		myField.selectionEnd = endPos + myValueBefore.length;
