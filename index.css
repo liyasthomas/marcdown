@@ -194,19 +194,20 @@ input:checked + .slider:before {
 }
 
 textarea {
-	width: 50vw;
-	height: 100%;
-	resize: none;
 	display: flex;
 	flex-grow: 1;
+	width: 50vw;
+	height: 100%;
+	padding: 16px;
+	resize: none;
 	background-color: var(--bg-color);
 	color: var(--font-color);
-	padding: 16px;
 	line-height: 2;
 	font-size: 16px;
 	font-weight: 600;
 	font-family: 'Roboto Mono', "SF Mono", "Lucida Console", Monaco, monospace;
 	z-index: 0;
+	transition: width .2s, padding .4s;
 }
 
 .markdown {
@@ -216,6 +217,7 @@ textarea {
 	overflow: auto;
 	padding: 16px;
 	font-family: 'Segoe UI', 'Arial', 'Roboto', 'Noto', sans-serif;
+	transition: width .2s, padding .4s;
 }
 
 h1,

@@ -151,24 +151,26 @@ const apply = (e) => {
 	keyUp();
 }
 const preview = (e) => {
-	let editor = document.getElementById('editor');
 	let viewer = document.getElementById('viewer');
 	let mark = document.getElementById('getm');
 	switch (e) {
 		case 'nill':
-			editor.style.display = 'none';
-			viewer.style.display = 'flex';
+			viewer.style.width = '100vw';
+			viewer.style.padding = "16px";
 			mark.style.width = "0";
+			mark.style.padding = "0";
 			break;
 		case 'half':
-			editor.style.display = 'flex';
-			viewer.style.display = 'flex';
+			viewer.style.width = '50vw';
+			viewer.style.padding = "16px";
 			mark.style.width = "50vw";
+			mark.style.padding = "16px";
 			break;
 		case 'full':
-			editor.style.display = 'flex';
-			viewer.style.display = 'none';
+			viewer.style.width = '0';
+			viewer.style.padding = "0";
 			mark.style.width = "100vw";
+			mark.style.padding = "16px";
 			break;
 	}
 }
