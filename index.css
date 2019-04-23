@@ -218,6 +218,7 @@ textarea {
 	padding: 16px;
 	font-family: 'Segoe UI', 'Arial', 'Roboto', 'Noto', sans-serif;
 	transition: width .2s, padding .4s;
+	counter-reset: line;
 }
 
 h1,
@@ -228,6 +229,20 @@ h5,
 h6,
 p {
 	margin: 4px 0;
+	counter-increment: line;
+}
+
+h1:hover::after,
+h2:hover::after,
+h3:hover::after,
+h4:hover::after,
+h5:hover::after,
+h6:hover::after,
+p:hover::after {
+	padding-left: 8px;
+	content: '¶'counter(line);
+	display: inline-block;
+	opacity: .5;
 }
 
 h1,
