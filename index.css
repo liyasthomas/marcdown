@@ -5,9 +5,9 @@
 }
 
 :root {
-	--font-color: #2B4459;
+	--font-color: #090821;
 	--bg-color: #DAE5ED;
-	--afont-color: #4865d8;
+	--afont-color: #fc2f70;
 	--dbg-color: rgba(0, 0, 0, 0.1);
 	--dbgh-color: rgba(0, 0, 0, 0.2);
 	--dbga-color: rgba(0, 0, 0, 0.3);
@@ -15,8 +15,8 @@
 
 [data-theme="dark"] {
 	--font-color: #DAE5ED;
-	--bg-color: #2B4459;
-	--afont-color: #6afca7;
+	--bg-color: #090821;
+	--afont-color: #3cefff;
 	--dbg-color: rgba(255, 255, 255, 0.1);
 	--dbgh-color: rgba(255, 255, 255, 0.2);
 	--dbga-color: rgba(255, 255, 255, 0.3);
