@@ -1,9 +1,3 @@
-@font-face {
-	font-family: 'Roboto Mono';
-	font-display: fallback;
-	src: local('Roboto Mono'), local('RobotoMono-Regular'), url(https://fonts.gstatic.com/s/robotomono/v6/L0x5DF4xlVMF-BfR8bXMIjhLq38.woff2) format('woff2');
-}
-
 :root {
 	--font-color: #090821;
 	--bg-color: #DAE5ED;
