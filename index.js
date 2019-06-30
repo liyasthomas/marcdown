@@ -20,7 +20,7 @@ const keyUp = () => {
 		wordcount.innerHTML = `${wordCount} words`
 		charcount.innerHTML = `${charCount} chars`
 		save.disabled = false
-		document.querySelectorAll('pre code').forEach((block) => {
+		document.querySelectorAll('code').forEach((block) => {
 			hljs.highlightBlock(block)
 		})
 		mouseUp()
