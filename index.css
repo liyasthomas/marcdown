@@ -204,6 +204,10 @@ textarea {
 	transition: width .2s, padding .4s;
 }
 
+#editor {
+	border-right: 2px dashed var(--afont-color);
+}
+
 .markdown {
 	display: flex;
 	flex-grow: 1;
