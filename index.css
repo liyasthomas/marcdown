@@ -298,11 +298,15 @@ th:first-child {
 
 	textarea {
 		width: 100vw;
-		height: 50vw;
+		height: calc(50vh - 57px);
 	}
 
 	#editor {
 		border: 0;
 		border-bottom: 2px dashed var(--afont-color);
+	}
+
+	.preview {
+		display: none;
 	}
 }
