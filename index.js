@@ -37,8 +37,10 @@ const switchTheme = ({
 }) => {
 	if (target.checked) {
 		document.documentElement.setAttribute('data-theme', 'dark')
+		document.querySelector("meta[name=theme-color]").setAttribute("content", "#090821")
 	} else {
 		document.documentElement.setAttribute('data-theme', 'light')
+		document.querySelector("meta[name=theme-color]").setAttribute("content", "#DAE5ED");
 	}
 }
 toggleSwitch.addEventListener('change', switchTheme, false)
