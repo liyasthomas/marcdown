@@ -290,3 +290,19 @@ td:first-child,
 th:first-child {
 	border-left: none;
 }
+
+@media (max-width: 880px) {
+	.content {
+		flex-direction: column;
+	}
+
+	textarea {
+		width: 100vw;
+		height: 50vw;
+	}
+
+	#editor {
+		border: 0;
+		border-bottom: 2px dashed var(--afont-color);
+	}
+}
