@@ -127,14 +127,11 @@ Full list of actions:
 	<meta charset="UTF-8">
 	<title>Marcdown</title>
 	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/gh/liyasthomas/marcdown/marcdown.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/liyasthomas/marcdown/marcdown.min.js"></script>
 </head>
 
 <body>
 	<textarea id="getm" placeholder="paste markdown here ✨" onkeyup="keyUp()"></textarea>
-	<button onclick="apply('bold')" title="Bold">B</button>
-	<button onclick="apply('bold')" title="Bold">B</button>
-	<button onclick="apply('bold')" title="Bold">B</button>
 	<button onclick="apply('bold')" title="Bold">B</button>
 	<button onclick="apply('italic')" title="Italic"><i>I</i></button>
 	<button onclick="apply('strike')" title="Strikethrough"><strike>S</strike></button>
