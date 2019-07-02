@@ -38,14 +38,147 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 ---
 
+## Getting started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+What things you need to install the software and how to install them.
+
+* Marcdown can be embedded into any web page consisting a `<textarea></textarea>` tag.
+* A browser with [ES6 support](https://caniuse.com/#feat=es6).
+* [Wonder](https://en.wikipedia.org/wiki/Wonder_(emotion))! :heart:
+
+---
 ## Demo
 
 [https://liyasthomas.github.io/marcdown](https://liyasthomas.github.io/marcdown)
 
-1. paste/type markdown on left
-2. view marcdown on right
+1. Paste/type markdown on left
+2. View preview on right
+3. Save Markdown file
 
 You're done!
+
+---
+
+### Installing
+
+A step by step series of examples that tell you've to get a development environment running.
+
+### Step 1: Include **[MarkedJS](https://marked.js.org)** and **[Marcdown.js](https://liyasthomas.github.io/marcdown)**
+
+>`<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>`
+
+>`<script src="https://cdn.jsdelivr.net/gh/liyasthomas/marcdown/marcdown.js"></script>`
+
+### Step 2: Define a `<textarea id="marcdown" onkeyup="keyUp()"></textarea>` tag inside `<body></body>`
+
+>`<textarea id="getm" placeholder="paste markdown here ✨" onkeyup="keyUp()"></textarea>`
+
+### Step 3: Define a `<div id="viewer"></textarea>` tag inside `<body></body>`
+
+>`<div id="viewer"></textarea>`
+
+### Step 4: Define buttons with actions such as bold, italic, strike, h1, ul, ol, code, link etc.
+
+>`<button onclick="apply('bold')" title="Bold">B</button>`
+
+Full list of actions:
+
+>`<button onclick="apply('bold')" title="Bold">B</button>`
+
+>`<button onclick="apply('italic')" title="Italic"><i>I</i></button>`
+
+>`<button onclick="apply('strike')" title="Strikethrough"><strike>S</strike></button>`
+
+>`<button onclick="apply('h1')" title="Header 1">H1</button>`
+
+>`<button onclick="apply('h2')" title="Header 1">H1</button>`
+
+>`<button onclick="apply('h3')" title="Header 1">H1</button>`
+
+>`<button onclick="apply('ul')" title="Unordered list">●</button>`
+
+>`<button onclick="apply('ol')" title="Ordered list">1.</button>`
+
+>`<button onclick="apply('check')" title="Check list">✔</button>`
+
+>`<button onclick="apply('bq')" title="Blockquote">””</button>`
+
+>`<button onclick="apply('code')" title="Code">&lt;></button>`
+
+>`<button onclick="apply('link')" title="Link">A</button>`
+
+>`<button onclick="apply('image')" title="Image">i</button>`
+
+>`<button onclick="apply('hr')" title="Horizontal rule">——</button>`
+
+>`<button onclick="apply('table')" title="Table">⚏</button>`
+
+## Example HTML file:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Marcdown</title>
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/liyasthomas/marcdown/marcdown.js"></script>
+</head>
+
+<body>
+	<textarea id="getm" placeholder="paste markdown here ✨" onkeyup="keyUp()"></textarea>
+	<button onclick="apply('bold')" title="Bold">B</button>
+	<button onclick="apply('bold')" title="Bold">B</button>
+	<button onclick="apply('bold')" title="Bold">B</button>
+	<button onclick="apply('bold')" title="Bold">B</button>
+	<button onclick="apply('italic')" title="Italic"><i>I</i></button>
+	<button onclick="apply('strike')" title="Strikethrough"><strike>S</strike></button>
+	<button onclick="apply('h1')" title="Header 1">H1</button>
+	<button onclick="apply('ul')" title="Unordered list">●</button>
+	<button onclick="apply('ol')" title="Ordered list">1.</button>
+	<button onclick="apply('code')" title="Code">&lt;></button>
+	<button onclick="apply('link')" title="Link">A</button>
+	<div class="markdown" id="viewer"></div>
+</body>
+
+</html>
+```
+---
+
+## Running the tests
+
+Explain how to run the automated tests for this system.
+
+### Break down into end to end tests
+
+Explain what these tests test and why.
+
+```
+Will be explained later
+```
+
+### And coding style tests
+
+Explain what these tests test and why.
+
+```
+Will be explained later
+```
+
+---
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system.
+
+```
+Will be explained later
+```
 
 ---
 
