@@ -35,13 +35,13 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 - Built for speed
 - Light-weight while implementing all markdown features from the supported flavors & specifications.
 
-:pen: **Code highlighting**: Syntax highlighting for**[highlightjs](https://highlightjs.org)**
+:pen: **Code highlighting**: Syntax highlighting with **[highlightjs](https://highlightjs.org)**
 
 - 185 languages and 89 styles
 - Automatic language detection
 - Multi-language code highlighting
 
-:triangular_ruler: **[MathJax](https://www.mathjax.org)** support for LaTeX, MathML, and AsciiMath notations
+:triangular_ruler: **Math support**: **[MathJax](https://www.mathjax.org)** for LaTeX, MathML, and AsciiMath notations
 
 - Use MathML, TeX, and ASCIImath as input and produce HTML+CSS, SVG, or MathML as output.
 
