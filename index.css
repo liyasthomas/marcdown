@@ -219,6 +219,14 @@ textarea {
 	counter-reset: line;
 }
 
+.hljs {
+	display: inline-flex !important;
+}
+
+pre .hljs {
+	display: flex !important;
+}
+
 h1,
 h2,
 h3,

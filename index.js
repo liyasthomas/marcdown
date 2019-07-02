@@ -122,7 +122,11 @@ const apply = (e) => {
 			myValueBefore = '- '
 			myValueAfter = ''
 			break
-		case 'code':
+		case 'ic':
+			myValueBefore = '`'
+			myValueAfter = '`'
+			break
+		case 'bc':
 			myValueBefore = '```'
 			myValueAfter = '```'
 			break
