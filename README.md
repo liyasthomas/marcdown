@@ -30,7 +30,25 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 :heart: **Lightweight and minimal**: Crafted with minimalistic UI design
 
-:electric_plug: **Real-time editor**: WYSIWYG (what you see is what you get) markdown editor 
+:electric_plug: **Real-time editor**: WYSIWYG (what you see is what you get) markdown editor using **[MarkedJS](https://marked.js.org)**
+
+- Built for speed
+- Light-weight while implementing all markdown features from the supported flavors & specifications.
+
+:pen: **Code highlighting**: Syntax highlighting for**[highlightjs](https://highlightjs.org)**
+
+- 185 languages and 89 styles
+- Automatic language detection
+- Multi-language code highlighting
+
+:triangular_ruler: **[MathJax](https://www.mathjax.org)** support for LaTeX, MathML, and AsciiMath notations
+
+- Use MathML, TeX, and ASCIImath as input and produce HTML+CSS, SVG, or MathML as output.
+
+:globe_with_meridians: **PWA**: Progressive web app.
+
+- Works offline after first use
+- Install as a Web app on your phone or Desktop app on your PC
 
 :zap: **Real-time viewer**: View changes as you type
 
@@ -194,6 +212,7 @@ Will be explained later
 
 * **[MarkedJS](https://marked.js.org)** - For markdown parser
 * **[highlightjs](https://highlightjs.org)** - For code highlighting
+* **[MathJax](https://www.mathjax.org)** - For LaTeX, MathML, and AsciiMath notations
 * **[Chromium](https://github.com/chromium/chromium)** - Thanks for being so fast!
 * HTML - For the web framework
 * CSS - For styling components
