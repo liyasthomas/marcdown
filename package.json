@@ -6,7 +6,7 @@
 	},
 	"description": "Lightweight markdown viewer and editor",
 	"author": "liyasthomas",
-	"version": "0.0.1",
+	"version": "0.3.0",
 	"devDependencies": {
 		"jshint": "^2.10.2"
 	},
