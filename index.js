@@ -5,7 +5,7 @@ MathJax.Hub.Config({
 	},
 	TeX: {
 		equationNumbers: {
-			autoNumber: "AMS"
+			autoNumber: 'AMS'
 		}
 	}
 })
@@ -46,26 +46,8 @@ const Preview = {
 		this.timeout = setTimeout(this.callback, this.delay)
 	},
 	CreatePreview() {
-		Preview.timeout = null
-		if (this.mjRunning) return
-		let text = this.textarea.value
-		if (text === this.oldtext) return
-		text = this.Escape(text)
-		this.buffer.innerHTML = this.oldtext = text
-		this.mjRunning = true
-		MathJax.Hub.Queue(
-['Typeset', MathJax.Hub, this.buffer],
-['PreviewDone', this],
-['resetEquationNumbers', MathJax.InputJax.TeX]
-		)
-	},
-	PreviewDone() {
-		this.mjRunning = false
-		text = this.buffer.innerHTML
-		text = this.PartialDescape(text)
-		this.buffer.innerHTML = marked(text)
 		let mark = document.getElementById('getm').value
-		let viewer = document.getElementById('viewer')
+		let viewer = document.getElementById('buffer').style.display == 'none' ? document.getElementById('viewer') : document.getElementById('buffer')
 		let wordcount = document.getElementById('wordcount')
 		let charcount = document.getElementById('charcount')
 		let save = document.getElementById('save')
@@ -76,16 +58,33 @@ const Preview = {
 			wordcount.innerHTML = `${wordCount} words`
 			charcount.innerHTML = `${charCount} chars`
 			save.disabled = false
-			document.querySelectorAll('code').forEach((block) => {
-				hljs.highlightBlock(block)
-			})
-			mouseUp()
 		} else {
-			viewer.innerHTML = ''
 			wordcount.innerHTML = '0 words'
 			charcount.innerHTML = '0 chars'
 			save.disabled = true
 		}
+		mouseUp()
+		Preview.timeout = null
+		if (this.mjRunning) return
+		let text = this.textarea.value
+		if (text === this.oldtext) return
+		text = this.Escape(text)
+		this.buffer.innerHTML = this.oldtext = text
+		this.mjRunning = true
+		MathJax.Hub.Queue(
+			['Typeset', MathJax.Hub, this.buffer],
+			['PreviewDone', this],
+			['resetEquationNumbers', MathJax.InputJax.TeX]
+		)
+	},
+	PreviewDone() {
+		this.mjRunning = false
+		text = this.buffer.innerHTML
+		text = this.PartialDescape(text)
+		this.buffer.innerHTML = marked(text)
+		document.querySelectorAll('code').forEach((block) => {
+			hljs.highlightBlock(block)
+		})
 		this.SwapBuffers()
 	},
 	Escape(html, encode) {
