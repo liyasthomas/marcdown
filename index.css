@@ -224,7 +224,7 @@ textarea {
 }
 
 pre .hljs {
-	display: flex !important;
+	display: block !important;
 }
 
 h1,
