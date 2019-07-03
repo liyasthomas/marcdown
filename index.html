@@ -99,9 +99,7 @@
 						</label>
 					</span>
 					<button type="button" onclick="download();" id="save" disabled>Save</button>
-					<button id="installPWA" onclick="installPWA()"><img src="icons/pwalogo.svg" alt="PWA" style="height: 16px;"></button>
-					<a href="https://github.com/liyasthomas/marcdown" style="margin-right: 16px;" target="_blank"><img src="icons/github.svg" alt="GitHub"></a>
-					🌙
+					🌗
 					<label class="theme-switch" for="checkbox" title="Night mode">
 						<input type="checkbox" id="checkbox">
 						<div class="slider round"></div>
@@ -130,10 +128,23 @@
 				<div style="flex: 1 1 0; text-align: right;">
 					<span id="charcount"></span>
 					<span id="wordcount"></span>
+					<span class="trigger">❓</span>
 				</div>
 			</div>
 		</footer>
+		<div class="modal">
+			<span class="close-button">✖</span>
+			<div class="modal-content">
+				<h1>Marcdown</h1>
+				<h3>👻 Lightweight markdown viewer and editor by <a href="https://github.com/liyasthomas">Liyas Thomas</a></h3>
+				<h3>
+					<a href="https://github.com/liyasthomas/marcdown" target="_blank"><img src="icons/github.svg" style="margin-right: 8px;" alt="GitHub">GitHub</a>
+					<button id="installPWA" onclick="installPWA()"><img src="icons/pwalogo.svg" alt="PWA" style="height: 16px;"></button>
+				</h3>
+			</div>
+		</div>
 	</main>
+
 	<script src="index.js"></script>
 </body>
 

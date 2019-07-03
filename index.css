@@ -60,9 +60,12 @@
 }
 
 a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	color: inherit;
+	border-bottom: 2px solid var(--afont-color);
 	text-decoration: none;
-	vertical-align: middle;
 }
 
 body {
@@ -124,6 +127,66 @@ button {
 button[disabled] {
 	opacity: .5;
 	pointer-events: none;
+}
+
+
+.trigger {
+	cursor: pointer;
+}
+
+.modal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .6);
+	opacity: 0;
+	visibility: hidden;
+	transform: scale(1.05);
+	transition: all .2s;
+	z-index: 99;
+}
+
+.show-modal {
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1);
+	transition: all .2s;
+}
+
+.modal-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: var(--bg-color);
+	padding: 16px 32px;
+	max-height: 80%;
+	max-width: 80%;
+	border-radius: 8px;
+	overflow: auto;
+	filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .2));
+}
+
+.close-button {
+	position: fixed;
+	right: 16px;
+	top: 16px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 32px;
+	width: 32px;
+	border-radius: 50%;
+	font-size: 18px;
+	color: var(--secondary-color);
+	cursor: pointer;
+	transition: all .2s;
+}
+
+.close-button:hover {
+	color: var(--font-color);
 }
 
 input[type="file"] {

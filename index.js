@@ -312,6 +312,20 @@ const slide = (e) => {
 			break
 	}
 }
+const modal = document.querySelector('.modal')
+const trigger = document.querySelector('.trigger')
+const closeButton = document.querySelector('.close-button')
+const toggleModal = () => modal.classList.toggle('show-modal')
+const windowOnClick = ({
+	target
+}) => {
+	if (target === modal) {
+		toggleModal()
+	}
+}
+trigger.addEventListener('click', toggleModal)
+closeButton.addEventListener('click', toggleModal)
+window.addEventListener('click', windowOnClick)
 let pwaInstalled = localStorage.getItem('pwaInstalled') == 'yes'
 if (window.matchMedia('(display-mode: standalone)').matches) {
 	localStorage.setItem('pwaInstalled', 'yes')
