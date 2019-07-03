@@ -148,7 +148,7 @@ const mouseUp = () => {
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]')
 if (localStorage.getItem('marcdownTheme') == 'dark') {
 	document.documentElement.setAttribute('data-theme', 'dark')
-	document.querySelector('meta[name=theme-color]').setAttribute('content', '#090821')
+	document.querySelector('meta[name=theme-color]').setAttribute('content', '#282a36')
 	toggleSwitch.checked = true
 	localStorage.setItem('marcdownTheme', 'dark')
 } else {
@@ -162,7 +162,7 @@ const switchTheme = ({
 }) => {
 	if (target.checked) {
 		document.documentElement.setAttribute('data-theme', 'dark')
-		document.querySelector('meta[name=theme-color]').setAttribute('content', '#090821')
+		document.querySelector('meta[name=theme-color]').setAttribute('content', '#282a36')
 		localStorage.setItem('marcdownTheme', 'dark')
 	} else {
 		document.documentElement.setAttribute('data-theme', 'light')

@@ -8,8 +8,8 @@
 }
 
 [data-theme="dark"] {
-	--font-color: #DAE5ED;
-	--bg-color: #090821;
+	--font-color: #f8f8f2;
+	--bg-color: #282a36;
 	--afont-color: #3cefff;
 	--dbg-color: rgba(255, 255, 255, 0.1);
 	--dbgh-color: rgba(255, 255, 255, 0.2);
