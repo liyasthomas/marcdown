@@ -89,15 +89,15 @@ A step by step series of examples that tell you've to get a development environm
 
 >`<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>`
 
->`<script src="https://cdn.jsdelivr.net/gh/liyasthomas/marcdown/marcdown.js"></script>`
+>`<script src="https://cdn.jsdelivr.net/gh/liyasthomas/marcdown/marcdown.min.js"></script>`
 
-### Step 2: Define a `<textarea id="marcdown" onkeyup="keyUp()"></textarea>` tag inside `<body></body>`
+### Step 2: Define a `<textarea id="getm" onkeyup="keyUp()"></textarea>` tag inside `<body></body>`
 
 >`<textarea id="getm" placeholder="paste markdown here ✨" onkeyup="keyUp()"></textarea>`
 
-### Step 3: Define a `<div id="viewer"></textarea>` tag inside `<body></body>`
+### Step 3: Define a `<div id="viewer"></div>` tag inside `<body></body>`
 
->`<div id="viewer"></textarea>`
+>`<div id="viewer"></div>`
 
 ### Step 4: Define buttons with actions such as bold, italic, strike, h1, ul, ol, code, link etc.
 
