@@ -87,56 +87,55 @@ A step by step series of examples that tell you've to get a development environm
 
 ### Step 1: Include **[MarkedJS](https://marked.js.org)** and **[Marcdown.js](https://liyasthomas.github.io/marcdown)**
 
->`<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>`
+`<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>`
 
->`<script src="https://cdn.jsdelivr.net/gh/liyasthomas/marcdown/marcdown.min.js"></script>`
+`<script src="https://cdn.jsdelivr.net/gh/liyasthomas/marcdown/marcdown.min.js"></script>`
 
 ### Step 2: Define a `<textarea id="getm" onkeyup="keyUp()"></textarea>` tag inside `<body></body>`
 
->`<textarea id="getm" placeholder="paste markdown here ✨" onkeyup="keyUp()"></textarea>`
+`<textarea id="getm" placeholder="paste markdown here ✨" onkeyup="keyUp()"></textarea>`
 
 ### Step 3: Define a `<div id="viewer"></div>` tag inside `<body></body>`
 
->`<div id="viewer"></div>`
+`<div id="viewer"></div>`
 
 ### Step 4: Define buttons with actions such as bold, italic, strike, h1, ul, ol, code, link etc.
 
->`<button onclick="apply('bold')" title="Bold">B</button>`
+`<button onclick="apply('bold')" title="Bold">B</button>`
 
 Full list of actions:
 
->`<button onclick="apply('bold')" title="Bold">B</button>`
+`<button onclick="apply('bold')" title="Bold">B</button>`
 
->`<button onclick="apply('italic')" title="Italic"><i>I</i></button>`
+`<button onclick="apply('italic')" title="Italic"><i>I</i></button>`
 
->`<button onclick="apply('strike')" title="Strikethrough"><strike>S</strike></button>`
+`<button onclick="apply('strike')" title="Strikethrough"><strike>S</strike></button>`
 
->`<button onclick="apply('h1')" title="Header 1">H1</button>`
+`<button onclick="apply('h1')" title="Header 1">H1</button>`
 
->`<button onclick="apply('h2')" title="Header 2">H2</button>`
+`<button onclick="apply('h2')" title="Header 2">H2</button>`
 
->`<button onclick="apply('h3')" title="Header 3">H3</button>`
+`<button onclick="apply('h3')" title="Header 3">H3</button>`
 
->`<button onclick="apply('ul')" title="Unordered list">●</button>`
+`<button onclick="apply('ul')" title="Unordered list">●</button>`
 
->`<button onclick="apply('ol')" title="Ordered list">1.</button>`
+`<button onclick="apply('ol')" title="Ordered list">1.</button>`
 
->`<button onclick="apply('check')" title="Check list">✔</button>`
+`<button onclick="apply('check')" title="Check list">✔</button>`
 
->`<button onclick="apply('bq')" title="Blockquote">””</button>`
+`<button onclick="apply('bq')" title="Blockquote">””</button>`
 
->`<button onclick="apply('ic')" title="Inline code">I&lt;></button>`
+`<button onclick="apply('ic')" title="Inline code">I&lt;></button>`
 
->`<button onclick="apply('bc')" title="Block code">&lt;>B</button>`
+`<button onclick="apply('bc')" title="Block code">&lt;>B</button>`
 
->`<button onclick="apply('link')" title="Link">A</button>`
+`<button onclick="apply('link')" title="Link">A</button>`
 
->`<button onclick="apply('image')" title="Image">I</button>`
+`<button onclick="apply('image')" title="Image">I</button>`
 
->`<button onclick="apply('hr')" title="Horizontal rule">——</button>`
+`<button onclick="apply('hr')" title="Horizontal rule">——</button>`
 
->`<button onclick="apply('table')" title="Table">⚏</button>`
-
+`<button onclick="apply('table')" title="Table">⚏</button>`
 
 ## Example HTML file:
 
@@ -173,27 +172,6 @@ Full list of actions:
 </body>
 
 </html>
-```
----
-
-## Running the tests
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why.
-
-```
-Will be explained later
-```
-
-### And coding style tests
-
-Explain what these tests test and why.
-
-```
-Will be explained later
 ```
 
 ---
