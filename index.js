@@ -10,7 +10,6 @@ MathJax.Hub.Config({
 	}
 })
 marked.setOptions({
-	breaks: true,
 	smartLists: true,
 	smartypants: true
 })
