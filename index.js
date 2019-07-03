@@ -10,14 +10,9 @@ MathJax.Hub.Config({
 	}
 })
 marked.setOptions({
-	renderer: new marked.Renderer(),
-	gfm: true,
-	tables: true,
-	breaks: false,
-	pedantic: false,
-	sanitize: false,
+	breaks: true,
 	smartLists: true,
-	smartypants: false
+	smartypants: true
 })
 const Preview = {
 	delay: 50,
@@ -71,11 +66,7 @@ const Preview = {
 		text = this.Escape(text)
 		this.buffer.innerHTML = this.oldtext = text
 		this.mjRunning = true
-		MathJax.Hub.Queue(
-			['Typeset', MathJax.Hub, this.buffer],
-			['PreviewDone', this],
-			['resetEquationNumbers', MathJax.InputJax.TeX]
-		)
+		MathJax.Hub.Queue(['Typeset', MathJax.Hub, this.buffer], ['PreviewDone', this], ['resetEquationNumbers', MathJax.InputJax.TeX])
 	},
 	PreviewDone() {
 		this.mjRunning = false
@@ -156,15 +147,28 @@ const mouseUp = () => {
 	colno.innerHTML = `Col ${textLines[textLines.length - 1].length}`
 }
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]')
+if (localStorage.getItem('marcdownTheme') == 'dark') {
+	document.documentElement.setAttribute('data-theme', 'dark')
+	document.querySelector('meta[name=theme-color]').setAttribute('content', '#090821')
+	toggleSwitch.checked = true
+	localStorage.setItem('marcdownTheme', 'dark')
+} else {
+	document.documentElement.setAttribute('data-theme', 'light')
+	document.querySelector('meta[name=theme-color]').setAttribute('content', '#DAE5ED')
+	toggleSwitch.checked = false
+	localStorage.setItem('marcdownTheme', 'light')
+}
 const switchTheme = ({
 	target
 }) => {
 	if (target.checked) {
 		document.documentElement.setAttribute('data-theme', 'dark')
 		document.querySelector('meta[name=theme-color]').setAttribute('content', '#090821')
+		localStorage.setItem('marcdownTheme', 'dark')
 	} else {
 		document.documentElement.setAttribute('data-theme', 'light')
 		document.querySelector('meta[name=theme-color]').setAttribute('content', '#DAE5ED')
+		localStorage.setItem('marcdownTheme', 'light')
 	}
 }
 toggleSwitch.addEventListener('change', switchTheme, false)
@@ -251,8 +255,8 @@ const apply = (e) => {
 			myValueAfter = '`'
 			break
 		case 'bc':
-			myValueBefore = '```'
-			myValueAfter = '```'
+			myValueBefore = '```\n'
+			myValueAfter = '\n```'
 			break
 		case 'link':
 			myValueBefore = '['
