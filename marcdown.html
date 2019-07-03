@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Marcdown</title>
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/liyasthomas/marcdown/marcdown.min.js"></script>
+</head>
+
+<body>
+	<textarea id="getm" placeholder="paste markdown here ✨" onkeyup="keyUp()"></textarea>
+	<button onclick="apply('bold')" title="Bold">B</button>
+	<button onclick="apply('italic')" title="Italic"><i>I</i></button>
+	<button onclick="apply('strike')" title="Strikethrough"><strike>S</strike></button>
+	<button onclick="apply('h1')" title="Header 1">H1</button>
+	<button onclick="apply('h2')" title="Header 2">H2</button>
+	<button onclick="apply('h3')" title="Header 3">H3</button>
+	<button onclick="apply('ul')" title="Unordered list">●</button>
+	<button onclick="apply('ol')" title="Ordered list">1.</button>
+	<button onclick="apply('check')" title="Check list">✔</button>
+	<button onclick="apply('bq')" title="Blockquote">””</button>
+	<button onclick="apply('ic')" title="Inline code">I&lt;></button>
+	<button onclick="apply('bc')" title="Block code">&lt;>B</button>
+	<button onclick="apply('link')" title="Link">A</button>
+	<button onclick="apply('image')" title="Image">I</button>
+	<button onclick="apply('hr')" title="Horizontal rule">——</button>
+	<button onclick="apply('table')" title="Table">⚏</button>
+	<div class="markdown" id="viewer"></div>
+</body>
+
+</html>
