@@ -52,6 +52,8 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 :zap: **Real-time viewer**: View changes as you type
 
+:scroll: **Scroll sync**: Editor and viewer scroll along with you
+
 :crescent_moon: **Dark mode**: Turn the lights off!
 
 ---
