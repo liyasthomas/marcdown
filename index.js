@@ -1,7 +1,10 @@
 MathJax.Hub.Config({
+	skipStartupTypeset: true,
 	showProcessingMessages: false,
 	tex2jax: {
-		inlineMath: [['$', '$'], ['\\(', '\\)']]
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [['$$', '$$'], ['\\[', '\\]']],
+		processEscapes: true
 	},
 	TeX: {
 		equationNumbers: {
@@ -24,6 +27,9 @@ const Preview = {
 		this.preview = document.getElementById('viewer')
 		this.buffer = document.getElementById('buffer')
 		this.textarea = document.getElementById('getm')
+		this.wordcount = document.getElementById('wordcount')
+		this.charcount = document.getElementById('charcount')
+		this.save = document.getElementById('save')
 	},
 	SwapBuffers() {
 		let buffer = this.preview
@@ -40,24 +46,6 @@ const Preview = {
 		this.timeout = setTimeout(this.callback, this.delay)
 	},
 	CreatePreview() {
-		let mark = document.getElementById('getm').value
-		let viewer = document.getElementById('buffer').style.display == 'none' ? document.getElementById('viewer') : document.getElementById('buffer')
-		let wordcount = document.getElementById('wordcount')
-		let charcount = document.getElementById('charcount')
-		let save = document.getElementById('save')
-		let regex = /\s+/gi
-		if (mark !== '') {
-			let wordCount = viewer.innerText.trim().replace(regex, ' ').split(' ').length
-			let charCount = viewer.innerText.replace(regex, '').length
-			wordcount.innerHTML = `${wordCount} words`
-			charcount.innerHTML = `${charCount} chars`
-			save.disabled = false
-		} else {
-			wordcount.innerHTML = '0 words'
-			charcount.innerHTML = '0 chars'
-			save.disabled = true
-		}
-		mouseUp()
 		Preview.timeout = null
 		if (this.mjRunning) return
 		let text = this.textarea.value
@@ -65,7 +53,22 @@ const Preview = {
 		text = this.Escape(text)
 		this.buffer.innerHTML = this.oldtext = text
 		this.mjRunning = true
+		MathJax.Hub.Configured()
 		MathJax.Hub.Queue(['Typeset', MathJax.Hub, this.buffer], ['PreviewDone', this], ['resetEquationNumbers', MathJax.InputJax.TeX])
+		let viewer = document.getElementById('buffer').style.display == 'none' ? document.getElementById('viewer') : document.getElementById('buffer')
+		let regex = /\s+/gi
+		if (text !== '') {
+			let wordCount = viewer.innerText.trim().replace(regex, ' ').split(' ').length
+			let charCount = viewer.innerText.replace(regex, '').length
+			this.wordcount.innerHTML = `${wordCount} words`
+			this.charcount.innerHTML = `${charCount} chars`
+			this.save.disabled = false
+		} else {
+			this.wordcount.innerHTML = '0 words'
+			this.charcount.innerHTML = '0 chars'
+			this.save.disabled = true
+		}
+		mouseUp()
 	},
 	PreviewDone() {
 		this.mjRunning = false
@@ -193,8 +196,8 @@ let openFile = ({
 	let reader = new FileReader()
 	reader.onload = () => {
 		document.getElementById('getm').value = reader.result
-		Preview.Update()
 		input.value = ''
+		Preview.Update()
 	}
 	reader.readAsText(input.files[0])
 }
