@@ -14,7 +14,7 @@ marked.setOptions({
 	smartypants: true
 })
 const Preview = {
-	delay: 50,
+	delay: 0,
 	preview: null,
 	buffer: null,
 	timeout: null,
@@ -31,7 +31,7 @@ const Preview = {
 		this.buffer = buffer
 		this.preview = preview
 		buffer.style.display = 'none'
-		preview.style.display = ''
+		preview.style.display = 'flex'
 	},
 	Update() {
 		if (this.timeout) {

@@ -66,6 +66,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/dracula.min.css">
 	<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/asvd/syncscroll/syncscroll.min.js"></script>
 </head>
 
 <body>
@@ -109,10 +110,10 @@
 		</header>
 		<section class="content">
 			<div id="editor">
-				<textarea name="markdown" id="getm" placeholder="paste markdown here ✨" onkeyup="Preview.Update()" onmouseup="mouseUp()" autofocus></textarea>
+				<textarea class="syncscroll" name="markdown" id="getm" placeholder="paste markdown here ✨" onkeyup="Preview.Update()" onmouseup="mouseUp()" autofocus name=syncscroll></textarea>
 			</div>
-			<div class="markdown" id="viewer"></div>
-			<div class="markdown" id="buffer" style="display: none;"></div>
+			<div class="markdown syncscroll" id="viewer" name="markdown"></div>
+			<div class="markdown syncscroll" id="buffer" style="display: none;" name="markdown"></div>
 		</section>
 		<footer>
 			<div class="tools">

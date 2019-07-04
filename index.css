@@ -361,6 +361,10 @@ th:first-child {
 	border-left: none;
 }
 
+img {
+	max-width: 100%;
+}
+
 @media (max-width: 880px) {
 	.content {
 		flex-direction: column;
