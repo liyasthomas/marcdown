@@ -55,7 +55,7 @@ const Preview = {
 		this.mjRunning = true
 		MathJax.Hub.Configured()
 		MathJax.Hub.Queue(['Typeset', MathJax.Hub, this.buffer], ['PreviewDone', this], ['resetEquationNumbers', MathJax.InputJax.TeX])
-		let viewer = document.getElementById('buffer').style.display == 'none' ? document.getElementById('viewer') : document.getElementById('buffer')
+		let viewer = document.getElementById('viewer').style.display == 'none' ? document.getElementById('buffer') : document.getElementById('viewer')
 		let regex = /\s+/gi
 		if (text !== '') {
 			let wordCount = viewer.innerText.trim().replace(regex, ' ').split(' ').length
