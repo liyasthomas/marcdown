@@ -52,6 +52,8 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 :zap: **Real-time viewer**: View changes as you type
 
+:raised_hand_with_fingers_splayed: **Drag and drop**: Grab a markdown file and drop to the editor
+
 :scroll: **Scroll sync**: Editor and viewer scroll along with you
 
 :crescent_moon: **Dark mode**: Turn the lights off!

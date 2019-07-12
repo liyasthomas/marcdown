@@ -189,7 +189,7 @@ const download = () => {
 	anchor.click()
 	document.body.removeChild(anchor)
 }
-let openFile = ({
+const openFile = ({
 	target
 }) => {
 	let input = target
@@ -201,6 +201,27 @@ let openFile = ({
 	}
 	reader.readAsText(input.files[0])
 }
+const handleFileSelect = (evt) => {
+	evt.stopPropagation()
+	evt.preventDefault()
+	const files = evt.dataTransfer.files
+	const reader = new FileReader()
+	reader.onload = ({
+		target
+	}) => {
+		document.getElementById('getm').value = target.result
+		Preview.Update()
+	}
+	reader.readAsText(files[0], 'UTF-8')
+}
+const handleDragOver = (evt) => {
+	evt.stopPropagation()
+	evt.preventDefault()
+	evt.dataTransfer.dropEffect = 'copy'
+}
+let dropZone = document.getElementById('getm')
+dropZone.addEventListener('dragover', handleDragOver, false)
+dropZone.addEventListener('drop', handleFileSelect, false)
 document.onkeyup = ({
 	altKey,
 	which
