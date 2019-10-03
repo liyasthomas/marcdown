@@ -168,8 +168,8 @@ button[disabled] {
 
 .close-button {
 	position: fixed;
-	top: 16px;
-	right: 16px;
+	top: 13px;
+	right: 13px;
 	display: inline-flex;
 	width: 32px;
 	height: 32px;
