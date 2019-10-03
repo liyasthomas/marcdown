@@ -35,10 +35,10 @@ workbox.routing.registerRoute(
 	})
 );
 workbox.precaching.precacheAndRoute([
-    '/marcdown/index.css',
-    '/marcdown/index.js',
+    'index.css',
+    'index.js',
 	{
-		url: '/marcdown/index.html',
+		url: 'index.html',
 		revision: '383676'
 	},
 ]);
@@ -49,7 +49,7 @@ var CURRENT_CACHES = {
 self.addEventListener('install', function (event) {
 	var now = Date.now();
 	var urlsToPrefetch = [
-    '/marcdown/index.html'
+    'index.html'
   ];
 	// All of these logging statements should be visible via the "Inspect" interface
 	// for the relevant SW accessed via chrome://serviceworker-internals
