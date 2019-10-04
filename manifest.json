@@ -34,8 +34,9 @@
 			"type": "image/png"
 		}
 	],
-	"start_url": "index.html",
+	"start_url": ".\/?utm_source=marcdownpwa&utm_medium=pwa&utm_campaign=pwapp",
 	"display": "standalone",
+	"orientation": "any",
 	"theme_color": "#DAE5ED",
 	"background_color": "#DAE5ED"
 }
