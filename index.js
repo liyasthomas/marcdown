@@ -1,3 +1,8 @@
+var myField = document.getElementById('getm'); // editors value
+var new_value = "" // always new value with symbols.
+var full_value = ""
+var semi_value = "" // always new value but not appended value by buttons.
+
 MathJax.Hub.Config({
 	skipStartupTypeset: true,
 	showProcessingMessages: false,
@@ -233,7 +238,6 @@ document.onkeyup = ({
 	}
 }
 const apply = (e) => {
-	let myField = document.getElementById('getm')
 	let myValueBefore
 	let myValueAfter
 	switch (e) {
@@ -302,6 +306,12 @@ const apply = (e) => {
 			myValueAfter = ''
 			break
 	}
+
+	new_value = "";
+	new_value = myValueBefore+""+myValueAfter;
+	full_value = "";
+	full_value = semi_value + new_value;
+
 	if (document.selection) {
 		myField.focus()
 		document.selection.createRange().text = myValueBefore + document.selection.createRange().text + myValueAfter
@@ -314,7 +324,23 @@ const apply = (e) => {
 		myField.focus()
 	}
 	Preview.Update()
+	console.warn("new value:"+new_value);
+	console.warn("semi value:"+semi_value);
+	
 }
+
+undo = () => {
+	if (window.event.ctrlKey && window.event.keyCode == 90) {
+		myField.value = full_value.replace(new_value,"");
+		console.info("UNDO");
+	}
+}
+change = () => {
+	semi_value = "";
+	semi_value = myField.value;
+	console.warn("semi:"+semi_value);
+}
+
 const slide = (e) => {
 	let viewer = document.getElementById('viewer')
 	let mark = document.getElementById('getm')

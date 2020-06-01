@@ -56,15 +56,15 @@
 	<link rel="stylesheet" href="index.css">
 
 	<script>
-		if ('serviceWorker' in navigator) {
-			window.addEventListener('load', function() {
-				navigator.serviceWorker.register('sw.js').then(function(registration) {
-					console.log('ServiceWorker registration successful with scope: ', registration.scope);
-				}).catch(function(err) {
-					console.log('ServiceWorker registration failed: ', err);
-				});
-			});
-		}
+		// if ('serviceWorker' in navigator) {
+		// 	window.addEventListener('load', function() {
+		// 		navigator.serviceWorker.register('sw.js').then(function(registration) {
+		// 			console.log('ServiceWorker registration successful with scope: ', registration.scope);
+		// 		}).catch(function(err) {
+		// 			console.log('ServiceWorker registration failed: ', err);
+		// 		});
+		// 	});
+		// }
 
 	</script>
 
@@ -117,7 +117,7 @@
 		</header>
 		<section class="content">
 			<div id="editor">
-				<textarea class="syncscroll" name="sync" id="getm" placeholder="paste markdown here ✨" onkeyup="Preview.Update()" onmouseup="mouseUp()" autofocus></textarea>
+				<textarea class="syncscroll" name="sync" id="getm" placeholder="paste markdown here ✨" onkeyup="Preview.Update(); change(); undo();" onmouseup="mouseUp()" autofocus></textarea>
 			</div>
 			<div class="markdown syncscroll" name="sync" id="viewer" style="display: none;"></div>
 			<div class="markdown syncscroll" name="sync" id="buffer"></div>
