@@ -3,7 +3,7 @@ const keyUp = () => {
   let viewer = document.getElementById("viewer");
   let regex = /\s+/gi;
   if (mark !== "") {
-    viewer.innerHTML = marked(mark);
+    viewer.innerHTML = marked.parse(mark);
   } else {
     viewer.innerHTML = "";
   }

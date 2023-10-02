@@ -88,7 +88,7 @@ const Preview = {
     this.mjRunning = false;
     text = this.buffer.innerHTML;
     text = this.PartialDescape(text);
-    this.buffer.innerHTML = marked(text);
+    this.buffer.innerHTML = marked.parse(text);
     document.querySelectorAll("code").forEach((block) => {
       hljs.highlightBlock(block);
     });
@@ -142,8 +142,8 @@ const Preview = {
   // add something like  onkeypress="Preview.UpdateKeyPress(event)" to textarea's attributes.
   UpdateKeyPress({ keyCode }) {
     if (keyCode < 16 || keyCode > 47) {
-      this.preview.innerHTML = `<p>${marked(this.textarea.value)}</p>`;
-      this.buffer.innerHTML = `<p>${marked(this.textarea.value)}</p>`;
+      this.preview.innerHTML = `<p>${marked.parse(this.textarea.value)}</p>`;
+      this.buffer.innerHTML = `<p>${marked.parse(this.textarea.value)}</p>`;
     }
     this.Update();
   },
